@@ -298,6 +298,51 @@ const modules = [
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Fornecedor.png",
         icon: <Briefcase className="text-fuchsia-600 mr-2" />,
       },
+      {
+        title: "Pesquisa de Itens Alugados",
+        description:
+          "A tela Pesquisa de Itens Alugados permite consultar de forma detalhada todos os itens vinculados a contratos de aluguel. Com filtros por item, código e semana, facilita a localização de peças específicas alugadas em determinado período. A listagem apresenta informações como vestuário, tamanho, cor, código do pedido e a semana do evento, permitindo controle total do fluxo de aluguel. É uma ferramenta essencial para o acompanhamento da disponibilidade do acervo.",
+        imageAlt: "Tela de Pesquisa de Itens Alugados",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Itens_Alugados.png",
+        icon: <Box className="text-purple-700 mr-2" />,
+      },
+      {
+        title: "Pesquisa de Estoque",
+        description:
+          "A tela Pesquisa de Estoque é usada para registrar aquisições de produtos e materiais junto aos fornecedores, permitindo o controle de custo e lançamento de contas a pagar.",
+        imageAlt: "Tela de Pesquisa de Estoque",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Estoque.png",
+        icon: <Archive className="text-cyan-700 mr-2" />,
+      },
+      {
+        title: "Pesquisa de Listagem",
+        description:
+          "A tela Pesquisa de Listagem de Festa é utilizada para visualizar e gerenciar listas de convidados associadas a eventos sociais como casamento, formatura, aniversário e festas de debutante.",
+        imageAlt: "Tela de Pesquisa de Listagem de Festa",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Listagem_Festa.png",
+        icon: <List className="text-yellow-600 mr-2" />,
+      },
+      {
+        title: "Pesquisa de Provas",
+        description:
+          "A tela Pesquisa de Provas Agendadas permite consultar todos os contratos que possuem provas marcadas, exibindo informações como cliente, valor, status da prova, data do evento, entrega, atendente e situação. É possível aplicar filtros como contrato, semana, evento, atendente, departamento e datas.",
+        imageAlt: "Tela de Pesquisa de Provas Agendadas",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Provas_Agendadas.png",
+        icon: <Calendar className="text-pink-500 mr-2" />,
+      },
+      {
+        title: "Pesquisa de Retirada",
+        description:
+          "A tela Pesquisa de Retirada de Roupas permite à loja organizar as entregas de vestuário agendadas para a semana. Por meio dela, é possível aplicar filtros como contrato, nome, atendente, evento e status da retirada para localizar rapidamente os clientes que possuem peças a serem entregues. A listagem exibe informações detalhadas como o valor do contrato, data da retirada e devolução, tipo de evento, atendente responsável e situação. A partir desta tela, também é possível gerar um relatório de acompanhamento no formato de checklist. Esse relatório detalha os itens de vestuário separados por cliente, com informações como código, descrição, tamanho e telefone de contato — facilitando o processo de check-in na entrega das roupas.",
+        imageAlt: "Tela de Pesquisa de Retirada de Roupas",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Retirada_Roupas.png",
+        icon: <Truck className="text-orange-700 mr-2" />,
+      },
     ],
   },
 ];
