@@ -1,6 +1,5 @@
-
 import React, { useState } from "react";
-import { User, Truck, Archive, List, Users, Package, Calendar } from "lucide-react";
+import { User, Truck, Lock, Settings, FileKey, List, Users, Package, Calendar } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const modules = [
@@ -106,7 +105,29 @@ const modules = [
       },
     ],
   },
-  // Os próximos módulos (Financeiro, Pesquisa) podem ser adicionados depois aqui.
+  {
+    key: "configuracoes",
+    label: "Configurações",
+    icon: <Settings className="mr-2" />,
+    features: [
+      {
+        title: "Senhas",
+        description:
+          "A tela de Senhas é utilizada para cadastrar e controlar os usuários que acessam o sistema. Nela é possível definir o nome, senha, perfil (como Gerente ou Administrador), nome de usuário e permissões específicas de ações como editar, pesquisar, excluir, imprimir e criar novos registros.",
+        imageAlt: "Tela de Senhas",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Senha.png",
+      },
+      {
+        title: "Configurações",
+        description:
+          "A tela de Configurações permite definir os principais parâmetros do sistema, como dados da empresa, endereços, logotipos e informações fiscais. Essas configurações são utilizadas em relatórios, documentos fiscais, DANFE e contratos.",
+        imageAlt: "Tela de Configurações",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Parametros.png",
+      },
+    ],
+  },
 ];
 
 const SystemModulesSection = () => {
