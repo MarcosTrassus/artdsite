@@ -64,6 +64,10 @@ const modules = [
 const SystemModulesSection = () => {
   const [selectedModuleKey, setSelectedModuleKey] = useState(modules[0].key);
 
+  const handleImageClick = (imageSrc: string) => {
+    window.open(imageSrc, '_blank');
+  };
+
   return (
     <section className="w-full py-14 bg-white/80">
       <div className="max-w-5xl mx-auto px-4">
@@ -97,9 +101,10 @@ const SystemModulesSection = () => {
                     <img
                       src={feature.imageSrc}
                       alt={feature.imageAlt}
-                      className="rounded-lg shadow mb-4 object-contain h-52 w-full bg-gray-50 border"
+                      className="rounded-lg shadow mb-4 object-contain h-52 w-full bg-gray-50 border cursor-pointer"
                       loading="lazy"
                       draggable={false}
+                      onClick={() => handleImageClick(feature.imageSrc)}
                     />
                     <p className="text-gray-700 text-[15px]">
                       {feature.description}
