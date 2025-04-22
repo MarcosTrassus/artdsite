@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   User,
@@ -23,10 +22,12 @@ import {
   Phone,
   Mail,
   Info,
+  Search,
+  Box,
+  Building,
 } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
-// Nova estrutura dos módulos:
 const modules = [
   {
     key: "cadastro",
@@ -247,6 +248,58 @@ const modules = [
       },
     ],
   },
+  {
+    key: "pesquisa",
+    label: "Pesquisa",
+    icon: <Search className="mr-2" />,
+    features: [
+      {
+        title: "Pesquisa de Clientes",
+        description:
+          "A tela Pesquisa de Clientes permite localizar rapidamente registros de clientes cadastrados no sistema. Com filtros como nome, CPF, cidade e estado, facilita o acesso a informações essenciais para atendimento, gestão de relacionamento e controle comercial.",
+        imageAlt: "Tela de Pesquisa de Clientes",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Clientes.png",
+        icon: <Users className="text-blue-600 mr-2" />,
+      },
+      {
+        title: "Pesquisa de Atendentes",
+        description:
+          "A tela Pesquisa de Atendentes permite visualizar, localizar e selecionar os atendentes cadastrados no sistema. É especialmente útil em processos de acesso a contratos fechados, comissões recebidas e demais dados da tela do Atendente.",
+        imageAlt: "Tela de Pesquisa de Atendentes",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Atendentes.png",
+        icon: <User className="text-teal-600 mr-2" />,
+      },
+      {
+        title: "Pesquisa de Contratos",
+        description:
+          "A tela Pesquisa de Contratos permite consultar de forma detalhada todos os contratos cadastrados no sistema. Através de filtros como nome do cliente, CPF, atendente, tipo de evento, situação, período e datas específicas, o usuário pode localizar com precisão os registros desejados. É uma ferramenta fundamental para o controle operacional, acompanhamento de atendimentos e análise gerencial do fluxo de eventos.",
+        imageAlt: "Tela de Pesquisa de Contratos",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Compras.png",
+        icon: <FileText className="text-orange-600 mr-2" />,
+      },
+      {
+        title: "Pesquisa de Acervo",
+        description:
+          "A tela Pesquisa de Acervo é usada para registrar aquisições de produtos e materiais junto aos fornecedores, permitindo o controle de custo e lançamento de contas a pagar.",
+        imageAlt: "Tela de Pesquisa de Acervo",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Acervo.png",
+        icon: <Archive className="text-gray-700 mr-2" />,
+      },
+      {
+        title: "Pesquisa de Fornecedores",
+        description:
+          "A tela Pesquisa de Fornecedores permite consultar e visualizar rapidamente todos os fornecedores cadastrados no sistema. A ferramenta é essencial para o gerenciamento de compras, contratos e controle de relacionamento com os parceiros comerciais.",
+        imageAlt: "Tela de Pesquisa de Fornecedores",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Fornecedor.png",
+        icon: <Briefcase className="text-fuchsia-600 mr-2" />,
+      },
+    ],
+  },
 ];
 
 const SystemModulesSection = () => {
@@ -316,4 +369,3 @@ const SystemModulesSection = () => {
 };
 
 export default SystemModulesSection;
-
