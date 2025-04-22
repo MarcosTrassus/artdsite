@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 
 const plans = [
   {
-    name: "Mensal",
+    name: "Básico",
     price: "R$ 189,00",
     period: "por mês",
     features: {
@@ -15,7 +15,7 @@ const plans = [
     },
   },
   {
-    name: "Trimestral",
+    name: "Avançado",
     price: "R$ 511,00",
     period: "a cada 3 meses",
     features: {
@@ -27,7 +27,7 @@ const plans = [
     obs: "Economize R$56",
   },
   {
-    name: "Semestral",
+    name: "Premium",
     price: "R$ 964,00",
     period: "a cada 6 meses",
     features: {
@@ -39,7 +39,7 @@ const plans = [
     obs: "Economize R$170",
   },
   {
-    name: "Anual",
+    name: "Premium Max",
     price: "R$ 1.749,00",
     period: "por ano",
     features: {

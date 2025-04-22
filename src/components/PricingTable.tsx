@@ -1,8 +1,7 @@
-
 import React from "react";
 import { Check, X } from "lucide-react";
 
-const planNames = ["Essencial", "Profissional", "Ilimitado"];
+const planNames = ["Básico", "Avançado", "Premium"];
 
 const tableData = [
   {
