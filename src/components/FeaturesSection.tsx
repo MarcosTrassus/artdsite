@@ -39,19 +39,31 @@ const FeaturesSection = () => (
     <h2 className="text-2xl md:text-3xl font-bold text-purple-700 text-center mb-10 font-montserrat">
       Funcionalidades Principais
     </h2>
-    <div className="max-w-5xl mx-auto grid gap-8 grid-cols-1 md:grid-cols-3">
-      {features.map((feature) => (
-        <div
-          key={feature.title}
-          className="bg-white/70 glass-morphism rounded-xl p-6 flex flex-col items-center shadow hover:scale-105 transition-transform"
-        >
-          <div className="bg-blue-100 text-blue-600 p-3 rounded-full mb-3">
-            <feature.icon size={28} />
+    <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-4 grid-cols-1">
+      {/* Coluna de imagem lateral apenas para telas médias/grandes */}
+      <div className="hidden md:flex col-span-1 items-start justify-center">
+        <img
+          src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=400&q=80"
+          alt="Ilustração Sistema Gestão"
+          className="rounded-xl shadow-lg max-w-[90%] mt-4"
+          draggable={false}
+        />
+      </div>
+      {/* Cards de funcionalidades */}
+      <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+        {features.map((feature) => (
+          <div
+            key={feature.title}
+            className="bg-white/70 glass-morphism rounded-xl p-6 flex flex-col items-center shadow hover:scale-105 transition-transform"
+          >
+            <div className="bg-blue-100 text-blue-600 p-3 rounded-full mb-3">
+              <feature.icon size={28} />
+            </div>
+            <h3 className="font-semibold text-lg mb-1 font-montserrat">{feature.title}</h3>
+            <p className="text-gray-600 text-center text-sm">{feature.description}</p>
           </div>
-          <h3 className="font-semibold text-lg mb-1 font-montserrat">{feature.title}</h3>
-          <p className="text-gray-600 text-center text-sm">{feature.description}</p>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </section>
 );
