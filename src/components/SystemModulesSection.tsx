@@ -2,13 +2,27 @@
 import React, { useState } from "react";
 import {
   User,
+  Users,
+  FilePlus,
+  FileText,
+  Package,
+  List,
+  Briefcase,
+  Book,
+  Settings,
   Truck,
+  Calendar,
+  MapPin,
+  ShoppingCart,
   DollarSign,
   Banknote,
   TrendingUp,
   ChartLine,
   ChartPie,
-  ShoppingCart
+  Archive,
+  Phone,
+  Mail,
+  Info,
 } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
@@ -26,6 +40,7 @@ const modules = [
         imageAlt: "Tela de Cadastro de Cliente",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/cliente_dados.png",
+        icon: <Users className="text-blue-600 mr-2" />,
       },
       {
         title: "Empresa",
@@ -34,6 +49,7 @@ const modules = [
         imageAlt: "Tela de Cadastro de Empresa",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/empresa_dados.png",
+        icon: <Briefcase className="text-fuchsia-600 mr-2" />,
       },
       {
         title: "Prospect",
@@ -42,6 +58,7 @@ const modules = [
         imageAlt: "Tela de Prospect",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/prospect_dados.png",
+        icon: <Info className="text-rose-600 mr-2" />,
       },
       {
         title: "Acervo",
@@ -50,6 +67,7 @@ const modules = [
         imageAlt: "Tela de Acervo",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/acervo_detalhe.png",
+        icon: <Package className="text-orange-600 mr-2" />,
       },
       {
         title: "Tipo de Acervo",
@@ -58,6 +76,7 @@ const modules = [
         imageAlt: "Tela Tipo de Acervo",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/tipo_acervo.png",
+        icon: <List className="text-yellow-500 mr-2" />,
       },
       {
         title: "Atendentes",
@@ -66,6 +85,7 @@ const modules = [
         imageAlt: "Tela de Cadastro de Atendentes",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/atendente_cadastro.png",
+        icon: <User className="text-teal-600 mr-2" />,
       },
       {
         title: "Fornecedores",
@@ -74,6 +94,7 @@ const modules = [
         imageAlt: "Tela de Cadastro de Fornecedores",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/fornecedor_cadastro.png",
+        icon: <Phone className="text-sky-600 mr-2" />,
       },
       {
         title: "Listagem de Eventos",
@@ -82,6 +103,7 @@ const modules = [
         imageAlt: "Tela de Listagem de Eventos",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Lista Eventos_1.png",
+        icon: <Calendar className="text-green-700 mr-2" />,
       },
       {
         title: "Senhas",
@@ -90,6 +112,7 @@ const modules = [
         imageAlt: "Tela de Senhas",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Senha.png",
+        icon: <Settings className="text-gray-700 mr-2" />,
       },
       {
         title: "Configurações",
@@ -98,6 +121,7 @@ const modules = [
         imageAlt: "Tela de Configurações",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Parametros.png",
+        icon: <Settings className="text-lime-700 mr-2" />,
       },
     ],
   },
@@ -113,6 +137,7 @@ const modules = [
         imageAlt: "Tela de Locação de Vestuário",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Operacional/Contrato.png",
+        icon: <FileText className="text-blue-700 mr-2" />,
       },
       {
         title: "Tipo de Eventos",
@@ -121,6 +146,7 @@ const modules = [
         imageAlt: "Tela de Tipo de Eventos",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Operacional/TipoEventos.png",
+        icon: <List className="text-orange-600 mr-2" />,
       },
       {
         title: "Setores",
@@ -129,6 +155,7 @@ const modules = [
         imageAlt: "Tela de Setores",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Operacional/Setores.png",
+        icon: <MapPin className="text-rose-500 mr-2" />,
       },
       {
         title: "Venda",
@@ -137,6 +164,7 @@ const modules = [
         imageAlt: "Tela de Venda",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Operacional/Venda.png",
+        icon: <ShoppingCart className="text-green-500 mr-2" />,
       },
       {
         title: "Backup",
@@ -145,6 +173,7 @@ const modules = [
         imageAlt: "Tela de Backup",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Operacional/Backup.png",
+        icon: <Archive className="text-gray-700 mr-2" />,
       },
       {
         title: "Agenda",
@@ -153,6 +182,7 @@ const modules = [
         imageAlt: "Tela de Agenda",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Operacional/Agenda.png",
+        icon: <Calendar className="text-violet-600 mr-2" />,
       },
     ],
   },
