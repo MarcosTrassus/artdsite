@@ -72,6 +72,22 @@ const modules = [
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Lista Eventos_1.png",
       },
+      {
+        title: "Senhas",
+        description:
+          "A tela de Senhas é utilizada para cadastrar e controlar os usuários que acessam o sistema. Nela é possível definir o nome, senha, perfil (como Gerente ou Administrador), nome de usuário e permissões específicas de ações como editar, pesquisar, excluir, imprimir e criar novos registros.",
+        imageAlt: "Tela de Senhas",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Senha.png",
+      },
+      {
+        title: "Configurações",
+        description:
+          "A tela de Configurações permite definir os principais parâmetros do sistema, como dados da empresa, endereços, logotipos e informações fiscais. Essas configurações são utilizadas em relatórios, documentos fiscais, DANFE e contratos.",
+        imageAlt: "Tela de Configurações",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Parametros.png",
+      },
     ],
   },
   {
