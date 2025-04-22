@@ -1,7 +1,9 @@
+
 import React, { useState } from "react";
-import { User, Truck, Lock, Settings, FileKey, List, Users, Package, Calendar } from "lucide-react";
+import { User, Truck, Settings, DollarSign } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
+// Nova estrutura dos módulos:
 const modules = [
   {
     key: "cadastro",
@@ -146,26 +148,11 @@ const modules = [
     ],
   },
   {
-    key: "configuracoes",
-    label: "Configurações",
-    icon: <Settings className="mr-2" />,
+    key: "financeiro",
+    label: "Financeiro",
+    icon: <DollarSign className="mr-2" />,
     features: [
-      {
-        title: "Senhas",
-        description:
-          "A tela de Senhas é utilizada para cadastrar e controlar os usuários que acessam o sistema. Nela é possível definir o nome, senha, perfil (como Gerente ou Administrador), nome de usuário e permissões específicas de ações como editar, pesquisar, excluir, imprimir e criar novos registros.",
-        imageAlt: "Tela de Senhas",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Senha.png",
-      },
-      {
-        title: "Configurações",
-        description:
-          "A tela de Configurações permite definir os principais parâmetros do sistema, como dados da empresa, endereços, logotipos e informações fiscais. Essas configurações são utilizadas em relatórios, documentos fiscais, DANFE e contratos.",
-        imageAlt: "Tela de Configurações",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Parametros.png",
-      },
+      // Por ora nenhuma tela, aguarda novas informações do usuário!
     ],
   },
 ];
@@ -198,29 +185,35 @@ const SystemModulesSection = () => {
           </TabsList>
           {modules.map((mod) => (
             <TabsContent key={mod.key} value={mod.key}>
-              <div className="grid md:grid-cols-2 gap-8">
-                {mod.features.map((feature) => (
-                  <div
-                    key={feature.title}
-                    className="bg-white rounded-xl p-6 flex flex-col shadow-md border border-blue-100"
-                  >
-                    <h3 className="font-semibold text-lg text-blue-700 mb-2">
-                      {feature.title}
-                    </h3>
-                    <img
-                      src={feature.imageSrc}
-                      alt={feature.imageAlt}
-                      className="rounded-lg shadow mb-4 object-contain h-52 w-full bg-gray-50 border cursor-pointer"
-                      loading="lazy"
-                      draggable={false}
-                      onClick={() => handleImageClick(feature.imageSrc)}
-                    />
-                    <p className="text-gray-700 text-[15px]">
-                      {feature.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
+              {mod.features.length === 0 ? (
+                <div className="text-gray-500 text-center py-20 text-lg">
+                  Módulo em construção. Em breve você terá mais informações por aqui!
+                </div>
+              ) : (
+                <div className="grid md:grid-cols-2 gap-8">
+                  {mod.features.map((feature) => (
+                    <div
+                      key={feature.title}
+                      className="bg-white rounded-xl p-6 flex flex-col shadow-md border border-blue-100"
+                    >
+                      <h3 className="font-semibold text-lg text-blue-700 mb-2">
+                        {feature.title}
+                      </h3>
+                      <img
+                        src={feature.imageSrc}
+                        alt={feature.imageAlt}
+                        className="rounded-lg shadow mb-4 object-contain h-52 w-full bg-gray-50 border cursor-pointer"
+                        loading="lazy"
+                        draggable={false}
+                        onClick={() => handleImageClick(feature.imageSrc)}
+                      />
+                      <p className="text-gray-700 text-[15px]">
+                        {feature.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </TabsContent>
           ))}
         </Tabs>
@@ -230,3 +223,4 @@ const SystemModulesSection = () => {
 };
 
 export default SystemModulesSection;
+
