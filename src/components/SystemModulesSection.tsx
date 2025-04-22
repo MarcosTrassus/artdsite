@@ -1,6 +1,15 @@
 
 import React, { useState } from "react";
-import { User, Truck, Settings, DollarSign } from "lucide-react";
+import {
+  User,
+  Truck,
+  DollarSign,
+  Banknote,
+  TrendingUp,
+  ChartLine,
+  ChartPie,
+  ShoppingCart
+} from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 // Nova estrutura dos módulos:
@@ -152,7 +161,60 @@ const modules = [
     label: "Financeiro",
     icon: <DollarSign className="mr-2" />,
     features: [
-      // Por ora nenhuma tela, aguarda novas informações do usuário!
+      {
+        title: "Contas Correntes",
+        description:
+          "A tela Contas Correntes é usada para cadastrar e controlar as contas bancárias da empresa. Nela, é possível inserir dados essenciais como banco, agência, número da conta, endereço, contatos e definir o valor de cheque especial disponível.",
+        imageAlt: "Tela de Contas Correntes",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Financeiro/ContasCorrentes.png",
+        icon: <Banknote className="text-green-600 mr-2" />,
+      },
+      {
+        title: "Movimentações",
+        description:
+          "A tela Movimentações permite consultar e acompanhar todas as entradas e saídas financeiras da empresa, como receitas, despesas, pagamentos e recebimentos.",
+        imageAlt: "Tela de Movimentações",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Financeiro/Movimentacoes_Filtros.png",
+        icon: <TrendingUp className="text-violet-600 mr-2" />,
+      },
+      {
+        title: "Projeção de Receita",
+        description:
+          "A tela Projeção de Receita permite visualizar os valores previstos a serem recebidos pela empresa em determinado período. É uma ferramenta essencial para o planejamento financeiro e acompanhamento de metas.",
+        imageAlt: "Tela de Projeção de Receita",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Financeiro/Projecao_Receita.png",
+        icon: <ChartLine className="text-blue-600 mr-2" />,
+      },
+      {
+        title: "Despesas",
+        description:
+          "A tela Despesas é utilizada para registrar todos os gastos da empresa, como pagamentos a fornecedores, contas a pagar, compras de materiais, entre outros.",
+        imageAlt: "Tela de Despesas",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Financeiro/Despesas.png",
+        icon: <DollarSign className="text-red-600 mr-2" />,
+      },
+      {
+        title: "Plano de Contas",
+        description:
+          "A tela Plano de Contas permite organizar os centros de custo e categorias financeiras da empresa, separando despesas e receitas por tipo e natureza. É essencial para o controle contábil e financeiro.",
+        imageAlt: "Tela de Plano de Contas",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Financeiro/Plano_Contas.png",
+        icon: <ChartPie className="text-amber-600 mr-2" />,
+      },
+      {
+        title: "Compras",
+        description:
+          "A tela Compras é usada para registrar aquisições de produtos e materiais junto aos fornecedores, permitindo o controle de custo e lançamento de contas a pagar.",
+        imageAlt: "Tela de Compras",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Financeiro/Compras.png",
+        icon: <ShoppingCart className="text-lime-600 mr-2" />,
+      },
     ],
   },
 ];
@@ -196,7 +258,8 @@ const SystemModulesSection = () => {
                       key={feature.title}
                       className="bg-white rounded-xl p-6 flex flex-col shadow-md border border-blue-100"
                     >
-                      <h3 className="font-semibold text-lg text-blue-700 mb-2">
+                      <h3 className="font-semibold text-lg text-blue-700 mb-2 flex items-center">
+                        {feature.icon && feature.icon}
                         {feature.title}
                       </h3>
                       <img
