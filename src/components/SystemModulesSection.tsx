@@ -343,6 +343,33 @@ const modules = [
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Retirada_Roupas.png",
         icon: <Truck className="text-orange-700 mr-2" />,
       },
+      {
+        title: "Pesquisa de Devoluções",
+        description:
+          "A tela Pesquisa de Devoluções Agendadas permite consultar todos os contratos que possuem devoluções programadas, exibindo dados detalhados como cliente, semana, data do evento, status da devolução, tipo de evento, departamento, atendente e situação atual. É possível aplicar filtros por contrato, semana, nome, CPF, evento, atendente, departamento, devolução e data do evento. Essa pesquisa facilita a organização logística e o controle dos itens que devem ser retornados à loja.",
+        imageAlt: "Tela de Pesquisa de Devoluções Agendadas",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Devolucao.png",
+        icon: <FileText className="text-blue-700 mr-2" />,
+      },
+      {
+        title: "Pesquisa de Comissões",
+        description:
+          "A tela Pesquisa de Comissões permite visualizar os valores de comissão gerados por atendente durante um período específico. É possível aplicar filtros por atendente, departamento e intervalo de datas, facilitando o controle e análise de desempenho individual.",
+        imageAlt: "Tela de Pesquisa de Comissões",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Comissoes.png",
+        icon: <DollarSign className="text-green-700 mr-2" />,
+      },
+      {
+        title: "Pesquisa de Fechamento Diário",
+        description:
+          "A tela Pesquisa de Fechamento Diário permite visualizar o total de valores recebidos e faturados dentro de um intervalo de datas. A ferramenta organiza automaticamente os registros por formas de pagamento, departamentos e atendentes, permitindo controle financeiro detalhado do dia. Além disso, a tela apresenta o número total de novos contratos e pagamentos realizados no período, sendo possível emitir relatórios financeiros que auxiliam a gestão de caixa e o fechamento contábil da loja.",
+        imageAlt: "Tela de Pesquisa de Fechamento Diário",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Fechamento_Diario.png",
+        icon: <FileText className="text-gray-700 mr-2" />,
+      },
     ],
   },
 ];
