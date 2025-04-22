@@ -12,7 +12,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
         <div className="text-center text-white px-4">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-lg">
-            Sistema de Gestão Empresarial
+            Monitor Aluguel de Roupas
           </h1>
           <p className="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
             Solução completa para otimizar seus processos e impulsionar seus resultados
