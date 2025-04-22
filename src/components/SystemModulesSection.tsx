@@ -119,6 +119,30 @@ const modules = [
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Operacional/Setores.png",
       },
+      {
+        title: "Venda",
+        description:
+          "A tela Venda é utilizada para registrar a comercialização de peças do acervo. Ao contrário da locação, a venda representa a saída definitiva do item, sendo ideal para itens em desuso ou promoções.",
+        imageAlt: "Tela de Venda",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Operacional/Venda.png",
+      },
+      {
+        title: "Backup",
+        description:
+          "A tela Backup permite criar uma cópia de segurança do sistema, garantindo proteção contra perdas de dados. O usuário pode escolher o local onde deseja salvar o arquivo de backup e optar por compactá-lo com o WinRAR.",
+        imageAlt: "Tela de Backup",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Operacional/Backup.png",
+      },
+      {
+        title: "Agenda",
+        description:
+          "A tela Agenda é utilizada para organizar os atendimentos e compromissos com clientes. Permite acompanhar, agendar e registrar o andamento de interações como contatos, retornos, confirmações e visitas.",
+        imageAlt: "Tela de Agenda",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Operacional/Agenda.png",
+      },
     ],
   },
   {
