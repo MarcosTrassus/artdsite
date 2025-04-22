@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { User, Truck } from "lucide-react";
+import { User, Truck, Archive, List, Users, Package, Calendar } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const modules = [
@@ -24,6 +24,54 @@ const modules = [
         imageAlt: "Tela de Cadastro de Empresa",
         imageSrc:
           "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/empresa_dados.png",
+      },
+      {
+        title: "Prospect",
+        description:
+          "A tela de Prospect permite registrar os dados de possíveis clientes que demonstraram interesse na loja, mas que ainda não realizaram nenhum contrato. Nela é possível cadastrar informações básicas como nome, CPF, endereço, contato, evento de interesse e observações, além de um acompanhamento detalhado por meio da aba Agenda.",
+        imageAlt: "Tela de Prospect",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/prospect_dados.png",
+      },
+      {
+        title: "Acervo",
+        description:
+          "A tela de Acervo é utilizada para o cadastro e controle de itens disponíveis para aluguel. Cada registro contém informações detalhadas como setor, modelo, cor, tamanho, tecido, categoria e valor de locação. Também é possível incluir observações, custo, estoque disponível e uma imagem ilustrativa do item.",
+        imageAlt: "Tela de Acervo",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/acervo_detalhe.png",
+      },
+      {
+        title: "Tipo de Acervo",
+        description:
+          "A tela Tipo de Acervo permite o cadastro das categorias utilizadas para classificar os itens disponíveis no sistema. Cada tipo possui uma sigla identificadora, descrição, setor relacionado (como feminino, masculino, noivas, etc.) e o gênero correspondente. Essas categorias ajudam a organizar o acervo, facilitando a busca e o agrupamento de itens nas demais telas do sistema.",
+        imageAlt: "Tela Tipo de Acervo",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/tipo_acervo.png",
+      },
+      {
+        title: "Atendentes",
+        description:
+          "A tela de Atendentes permite o cadastro dos colaboradores responsáveis pelo atendimento na loja. Além dos dados pessoais e de contato, a tela permite acompanhar as comissões mensais geradas e os contratos realizados por cada atendente.",
+        imageAlt: "Tela de Cadastro de Atendentes",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/atendente_cadastro.png",
+      },
+      {
+        title: "Fornecedores",
+        description:
+          "A tela de Fornecedores permite o cadastro e a gestão dos parceiros comerciais responsáveis pelo fornecimento de produtos ou serviços. Nela são registrados dados como nome, CNPJ, IE, endereço, contatos, data de cadastro e status de atividade. Também é possível consultar o histórico de compras e visualizar os lançamentos financeiros vinculados ao fornecedor.",
+        imageAlt: "Tela de Cadastro de Fornecedores",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/fornecedor_cadastro.png",
+      },
+      {
+        title: "Listagem de Eventos",
+        description:
+          "A tela de Listagem de Eventos é utilizada para organizar os eventos sociais de clientes, como casamentos, aniversários e formaturas. Permite registrar informações detalhadas sobre os noivos, familiares, data do evento e contatos, além de controlar a lista de participantes confirmados ou convidados.",
+        imageAlt: "Tela de Listagem de Eventos",
+        imageSrc:
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Lista Eventos_1.png",
       },
     ],
   },
@@ -121,4 +169,3 @@ const SystemModulesSection = () => {
 };
 
 export default SystemModulesSection;
-
