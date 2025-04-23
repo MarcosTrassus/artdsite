@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Check, X } from "lucide-react";
 
@@ -244,4 +243,3 @@ const ScreenshotsSection = () => (
 );
 
 export default ScreenshotsSection;
-
