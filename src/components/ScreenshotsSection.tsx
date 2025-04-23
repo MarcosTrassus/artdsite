@@ -1,34 +1,40 @@
+
 import React from "react";
 import { Check, X } from "lucide-react";
 
-// Novos gradientes e badges destacados
 const plans = [
   {
     name: "Básico",
     desc: "Essencial para começar",
-    colorBg: "bg-gradient-to-br from-yellow-100 via-yellow-50 to-white",
-    colorBorder: "border-yellow-200",
+    colorBg: "from-yellow-100 via-yellow-50 to-white",
+    shadow: "shadow-yellow-200/30",
+    border: "border-yellow-300",
     price: "R$ 190,00",
     highlight: false,
     badge: false,
+    z: "z-0"
   },
   {
     name: "Avançado",
     desc: "Mais vendido",
-    colorBg: "bg-gradient-to-br from-purple-100 via-blue-100 to-white",
-    colorBorder: "border-purple-400",
+    colorBg: "from-purple-200 via-blue-100 to-white",
+    shadow: "shadow-purple-300/40",
+    border: "border-purple-600",
     price: "R$ 290,00",
     highlight: true,
     badge: true,
+    z: "z-20"
   },
   {
     name: "Premium",
     desc: "Para empresas exigentes",
-    colorBg: "bg-gradient-to-br from-blue-100 via-white to-purple-100",
-    colorBorder: "border-blue-300",
+    colorBg: "from-blue-100 via-white to-purple-100",
+    shadow: "shadow-blue-200/30",
+    border: "border-blue-400",
     price: "R$ 490,00",
     highlight: false,
     badge: false,
+    z: "z-10"
   },
 ];
 
@@ -135,109 +141,109 @@ const functionalities = [
   },
 ];
 
-// Icone/valor funcionalidade
 const getCellValue = (value: React.ReactNode | boolean | string | undefined) => {
   if (value === true)
-    return <Check className="mx-auto text-green-600" size={20} />;
+    return <Check className="mx-auto text-green-500" size={20} />;
   if (value === false)
-    return <X className="mx-auto text-red-600" size={20} />;
+    return <X className="mx-auto text-red-400" size={20} />;
   return <div className="text-center">{value}</div>;
 };
 
 const ScreenshotsSection = () => (
-  <section className="w-full bg-gradient-to-br from-indigo-50 via-yellow-50 to-blue-100 py-16 md:py-24 transition-all duration-200">
+  <section className="w-full bg-gradient-to-br from-indigo-50 via-yellow-50 to-blue-100 py-16 md:py-24">
     <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-12 font-montserrat tracking-tight drop-shadow animate-fade-in">
       Planos e Preços
     </h2>
+    {/* Cards de preços - novo layout overlap/glass */}
+    <div className="relative max-w-5xl mx-auto mb-14 flex flex-col md:flex-row md:justify-center gap-0 md:gap-0 px-4">
+      {plans.map((plan, idx) => (
+        <div
+          key={plan.name}
+          className={`group relative flex-1 md:-mx-4 flex flex-col items-center border-2 ${plan.border}
+            rounded-3xl shadow-2xl ${plan.shadow} bg-gradient-to-br ${plan.colorBg}
+            backdrop-blur-lg glass-morphism transition-all duration-300 ${plan.z}
+            ${plan.highlight ? "scale-110 shadow-3xl border-4 shadow-purple-300/70" : "md:scale-100"}
+            ${plan.highlight ? "md:-translate-y-5" : "md:translate-y-5"}
+            md:hover:scale-110 md:hover:z-30 animate-fade-in`}
+          style={{
+            minWidth: 260,
+            maxWidth: 335,
+            marginLeft: idx === 0 ? '0' : '-60px',
+            marginRight: idx === 2 ? '0' : '-60px',
+          }}
+        >
+          {/* Badge para o plano mais vendido */}
+          {plan.badge && (
+            <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-fuchsia-400 via-purple-400 to-cyan-400 text-white text-xs px-4 py-1.5 rounded-full shadow font-bold tracking-wide uppercase animate-fade-in">
+              Mais vendido
+            </span>
+          )}
 
-    {/* Cards de preços */}
-    <div className="max-w-7xl mx-auto mb-16 px-3">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
-        {plans.map((plan, idx) => (
-          <div
-            key={plan.name}
-            className={`
-              group relative rounded-3xl border-2 ${plan.colorBorder} ${plan.colorBg}
-              shadow-2xl flex flex-col items-center py-12 px-8
-              transition-transform duration-300 ease-in-out
-              hover:scale-105 hover:z-20 hover:shadow-3xl 
-              ${plan.highlight ? "md:scale-105 z-10 border-purple-600" : ""}
-              animate-fade-in
-            `}
-            style={{
-              boxShadow: plan.highlight
-                ? "0 6px 40px 0 rgba(124, 58, 237, 0.18)"
-                : "0 4px 24px 0 rgba(48, 67, 128, 0.06)",
-            }}
-          >
-            {/* Badge para o plano mais vendido */}
-            {plan.badge && (
-              <span className="absolute top-0 right-0 mt-4 mr-6 bg-gradient-to-r from-fuchsia-400 via-purple-400 to-cyan-400 text-white text-xs px-4 py-1.5 rounded-full shadow font-bold tracking-wide uppercase animate-fade-in">
-                Mais vendido
-              </span>
+          <span className={`uppercase tracking-wider font-semibold text-[1.05rem] font-poppins drop-shadow text-blue-800 mt-12 animate-fade-in`}>
+            {plan.name}
+          </span>
+          <span className="my-4 font-bold text-4xl md:text-5xl text-blue-900 bg-yellow-50 rounded-2xl px-8 py-4 shadow-lg font-montserrat animate-fade-in">
+            {plan.price}
+          </span>
+          <span className="block text-md text-gray-700 mb-2 animate-fade-in">{plan.desc}</span>
+          <ul className="mt-2 mb-6 flex-1 flex flex-col gap-2 w-full text-[13px] px-5">
+            {idx === 0 && (
+              <li className="text-blue-900">Ideal para pequenos negócios em início de estruturação</li>
             )}
-
-            <span className="uppercase tracking-wider font-semibold text-[1.05rem] text-blue-700 font-poppins drop-shadow animate-fade-in">
-              {plan.name}
-            </span>
-            <span className="my-4 font-bold text-4xl md:text-5xl text-blue-900 bg-yellow-50 rounded-2xl px-8 py-5 shadow-lg font-montserrat animate-fade-in">
-              {plan.price}
-            </span>
-            <span className="block text-md text-gray-700 mb-2 animate-fade-in">{plan.desc}</span>
-            <ul className="mt-2 flex-1 flex flex-col gap-1 w-full">
-              {idx === 0 && (
-                <li className="text-[13px] text-left text-blue-900">Ideal para pequenos negócios em início de estruturação</li>
-              )}
-              {idx === 1 && (
-                <li className="text-[13px] text-left text-blue-900">Para empresas em crescimento que precisam de agilidade</li>
-              )}
-              {idx === 2 && (
-                <li className="text-[13px] text-left text-blue-900">Para empresas que não podem parar e precisam de performance máxima</li>
-              )}
-            </ul>
-          </div>
-        ))}
-      </div>
+            {idx === 1 && (
+              <li className="text-blue-900">Para empresas em crescimento que precisam de agilidade</li>
+            )}
+            {idx === 2 && (
+              <li className="text-blue-900">Para empresas que não podem parar e precisam de performance máxima</li>
+            )}
+          </ul>
+        </div>
+      ))}
     </div>
 
-    {/* Tabela de funcionalidades */}
-    <div className="max-w-5xl mx-auto px-3">
-      <div className="overflow-x-auto rounded-3xl shadow-xl bg-gradient-to-br from-white to-blue-50 border border-blue-100">
-        <table className="min-w-[830px] w-full border-0 rounded-3xl">
-          <thead>
+    {/* Tabela de funcionalidades - layout dinâmico */}
+    <div className="max-w-5xl mx-auto px-2 md:px-3">
+      <div className="overflow-x-auto rounded-2xl bg-white/80 shadow-2xl glass-morphism border border-blue-100">
+        <table className="min-w-[800px] w-full rounded-2xl border-separate border-spacing-y-1">
+          <thead className="bg-gradient-to-r from-blue-100 via-purple-100 to-white sticky top-0 z-10">
             <tr>
-              <th className="py-5 px-4 text-left font-bold text-base rounded-tl-2xl bg-blue-100 text-blue-800">
+              <th className="py-4 px-4 text-left font-bold text-base rounded-tl-2xl text-blue-800 bg-transparent">
                 Funcionalidade
               </th>
-              <th className="py-5 px-4 text-center font-bold text-base bg-blue-100 text-blue-700">
+              <th className="py-4 px-4 text-center font-bold text-base text-purple-800 bg-transparent">
                 Básico
               </th>
-              <th className="py-5 px-4 text-center font-bold text-base bg-blue-100 text-blue-700">
+              <th className="py-4 px-4 text-center font-bold text-base text-purple-800 bg-transparent">
                 Avançado
               </th>
-              <th className="py-5 px-4 text-center font-bold text-base bg-blue-100 text-blue-700 rounded-tr-2xl">
+              <th className="py-4 px-4 text-center font-bold text-base text-purple-800 bg-transparent rounded-tr-2xl">
                 Premium
               </th>
             </tr>
           </thead>
           <tbody>
             {functionalities.map((f, idx) => (
-              <React.Fragment key={f.label || idx}>
-                <tr className={`${f.highlight ? "bg-yellow-50/70" : (idx % 2 === 0 ? "bg-white" : "bg-gray-50")}`}>
-                  <td className={`px-4 py-4 text-md transition-all duration-200 ${f.highlight ? "font-bold text-blue-900" : "text-gray-800"} ${idx === 0 ? "rounded-l-xl" : ""}`}>
-                    {f.label}
-                  </td>
-                  <td className="py-4 px-2">{getCellValue(f.basic)}</td>
-                  <td className="py-4 px-2">{getCellValue(f.advanced)}</td>
-                  <td className="py-4 px-2">{getCellValue(f.premium)}</td>
-                </tr>
-              </React.Fragment>
+              <tr
+                key={f.label || idx}
+                className={`
+                  ${f.highlight ? "bg-yellow-50/80" : (idx % 2 === 0 ? "bg-white/70" : "bg-blue-50/60")}
+                  border-y border-blue-100 hover:bg-purple-50/70 transition-colors group
+                `}
+              >
+                <td className={`px-4 py-4 text-md ${f.highlight ? "font-bold text-blue-900" : "text-gray-800"} ${idx === 0 ? "rounded-l-xl" : ""}`}>
+                  {f.label}
+                </td>
+                <td className="py-4 px-2">{getCellValue(f.basic)}</td>
+                <td className="py-4 px-2">{getCellValue(f.advanced)}</td>
+                <td className="py-4 px-2">{getCellValue(f.premium)}</td>
+              </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <p className="text-center text-gray-600 text-base mt-10 mx-auto max-w-xl">
-        Todos os planos incluem suporte via chat e abertura de chamados. Consulte as opções de créditos de desenvolvimento e condições especiais para sua empresa.
+      <p className="text-center text-gray-600 text-base mt-8 mx-auto max-w-xl">
+        Todos os planos incluem suporte via chat e abertura de chamados.<br />
+        Consulte as opções de créditos de desenvolvimento e condições especiais para sua empresa.
       </p>
     </div>
   </section>
