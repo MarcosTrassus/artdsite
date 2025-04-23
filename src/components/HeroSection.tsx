@@ -1,18 +1,18 @@
 
-import React from "react";
+import React, { useState } from "react";
 
 const HeroSection = () => {
+  const [imageError, setImageError] = useState(false);
+  const heroImageUrl = "https://monitor.aluguelderoupas.trassusdigital.com.br/Imagem/header_dashboard_site.png";
+  const fallbackImageUrl = "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=600&q=80";
+
   return (
     <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
       <img 
-        src="https://monitor.aluguelderoupas.trassusdigital.com.br/Imagem/header_dashboard_site.png" 
+        src={imageError ? fallbackImageUrl : heroImageUrl}
         alt="Dashboard Header" 
         className="w-full h-full object-cover object-center"
-        onError={(e) => {
-          const target = e.target as HTMLImageElement;
-          target.onerror = null;
-          target.src = "https://via.placeholder.com/1200x600?text=Dashboard+Header";
-        }}
+        onError={() => setImageError(true)}
       />
       <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
         <div className="text-center text-white px-4">

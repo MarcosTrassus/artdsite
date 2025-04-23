@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import {
   User,
@@ -377,9 +378,30 @@ const modules = [
 
 const SystemModulesSection = () => {
   const [selectedModuleKey, setSelectedModuleKey] = useState(modules[0].key);
+  const [imageErrors, setImageErrors] = useState<{[key: string]: boolean}>({});
 
   const handleImageClick = (imageSrc: string) => {
     window.open(imageSrc, '_blank');
+  };
+
+  const handleImageError = (title: string) => {
+    setImageErrors(prev => ({...prev, [title]: true}));
+  };
+
+  // Fallback image options based on category
+  const getFallbackImage = (moduleKey: string) => {
+    switch(moduleKey) {
+      case 'cadastro':
+        return "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
+      case 'operacional':
+        return "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
+      case 'financeiro':
+        return "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
+      case 'pesquisa':
+        return "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
+      default:
+        return "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
+    }
   };
 
   return (
@@ -418,25 +440,29 @@ const SystemModulesSection = () => {
                         {feature.icon}
                         {feature.title}
                       </h3>
-                      {feature.imageSrc ? (
-                        <img
-                          src={feature.imageSrc}
-                          alt={feature.imageAlt || `Imagem de ${feature.title}`}
-                          className="rounded-lg shadow mb-4 object-contain h-52 w-full bg-gray-50 border cursor-pointer"
-                          loading="lazy"
-                          draggable={false}
-                          onClick={() => handleImageClick(feature.imageSrc)}
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.onerror = null;
-                            target.src = "https://via.placeholder.com/400x200?text=Imagem+Indisponível";
-                          }}
-                        />
-                      ) : (
-                        <div className="rounded-lg shadow mb-4 h-52 w-full bg-gray-50 border flex items-center justify-center text-gray-400">
-                          Imagem indisponível
-                        </div>
-                      )}
+                      <div 
+                        className="rounded-lg shadow mb-4 h-52 w-full bg-gray-50 border cursor-pointer overflow-hidden"
+                        onClick={() => !imageErrors[feature.title] && feature.imageSrc && handleImageClick(feature.imageSrc)}
+                      >
+                        {feature.imageSrc && !imageErrors[feature.title] ? (
+                          <img
+                            src={feature.imageSrc}
+                            alt={feature.imageAlt || `Imagem de ${feature.title}`}
+                            className="h-full w-full object-contain"
+                            loading="lazy"
+                            draggable={false}
+                            onError={() => handleImageError(feature.title)}
+                          />
+                        ) : (
+                          <img
+                            src={getFallbackImage(mod.key)}
+                            alt={`Imagem alternativa para ${feature.title}`}
+                            className="h-full w-full object-cover"
+                            loading="lazy"
+                            draggable={false}
+                          />
+                        )}
+                      </div>
                       <p className="text-gray-700 text-[15px]">
                         {feature.description}
                       </p>
