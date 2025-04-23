@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Check, X } from "lucide-react";
 
@@ -6,9 +5,9 @@ const plans = [
   {
     name: "Básico",
     desc: "Essencial para começar",
-    colorBg: "from-yellow-100 via-yellow-50 to-white",
-    shadow: "shadow-yellow-200/30",
-    border: "border-yellow-300",
+    colorBg: "bg-soft-gray",
+    shadow: "shadow-gray-200/30",
+    border: "border-gray-300",
     price: "R$ 190,00",
     highlight: false,
     badge: false,
@@ -17,9 +16,9 @@ const plans = [
   {
     name: "Avançado",
     desc: "Mais vendido",
-    colorBg: "from-purple-200 via-blue-100 to-white",
+    colorBg: "bg-soft-purple",
     shadow: "shadow-purple-300/40",
-    border: "border-purple-600",
+    border: "border-vivid-purple",
     price: "R$ 290,00",
     highlight: true,
     badge: true,
@@ -28,9 +27,9 @@ const plans = [
   {
     name: "Premium",
     desc: "Para empresas exigentes",
-    colorBg: "from-blue-100 via-white to-purple-100",
+    colorBg: "bg-soft-blue",
     shadow: "shadow-blue-200/30",
-    border: "border-blue-400",
+    border: "border-ocean-blue",
     price: "R$ 490,00",
     highlight: false,
     badge: false,
@@ -38,7 +37,6 @@ const plans = [
   },
 ];
 
-// Funcionalidades (mantidas)
 const functionalities = [
   {
     label: "",
@@ -150,73 +148,68 @@ const getCellValue = (value: React.ReactNode | boolean | string | undefined) => 
 };
 
 const ScreenshotsSection = () => (
-  <section className="w-full bg-gradient-to-br from-indigo-50 via-yellow-50 to-blue-100 py-16 md:py-24">
+  <section className="w-full bg-white py-16 md:py-24">
     <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-12 font-montserrat tracking-tight drop-shadow animate-fade-in">
       Planos e Preços
     </h2>
-    {/* Cards de preços - novo layout overlap/glass */}
-    <div className="relative max-w-5xl mx-auto mb-14 flex flex-col md:flex-row md:justify-center gap-0 md:gap-0 px-4">
+    <div className="relative max-w-5xl mx-auto mb-14 flex flex-col md:flex-row md:justify-center gap-6 px-4">
       {plans.map((plan, idx) => (
         <div
           key={plan.name}
-          className={`group relative flex-1 md:-mx-4 flex flex-col items-center border-2 ${plan.border}
-            rounded-3xl shadow-2xl ${plan.shadow} bg-gradient-to-br ${plan.colorBg}
-            backdrop-blur-lg glass-morphism transition-all duration-300 ${plan.z}
-            ${plan.highlight ? "scale-110 shadow-3xl border-4 shadow-purple-300/70" : "md:scale-100"}
+          className={`group relative flex-1 flex flex-col items-center border-2 ${plan.border}
+            rounded-3xl shadow-xl ${plan.shadow} ${plan.colorBg}
+            backdrop-blur-lg transition-all duration-300 ${plan.z}
+            ${plan.highlight ? "scale-110 shadow-3xl border-4" : "md:scale-100"}
             ${plan.highlight ? "md:-translate-y-5" : "md:translate-y-5"}
             md:hover:scale-110 md:hover:z-30 animate-fade-in`}
           style={{
             minWidth: 260,
             maxWidth: 335,
-            marginLeft: idx === 0 ? '0' : '-60px',
-            marginRight: idx === 2 ? '0' : '-60px',
           }}
         >
-          {/* Badge para o plano mais vendido */}
           {plan.badge && (
-            <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-fuchsia-400 via-purple-400 to-cyan-400 text-white text-xs px-4 py-1.5 rounded-full shadow font-bold tracking-wide uppercase animate-fade-in">
+            <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-vivid-purple text-white text-xs px-4 py-1.5 rounded-full shadow font-bold tracking-wide uppercase animate-fade-in">
               Mais vendido
             </span>
           )}
 
-          <span className={`uppercase tracking-wider font-semibold text-[1.05rem] font-poppins drop-shadow text-blue-800 mt-12 animate-fade-in`}>
+          <span className={`uppercase tracking-wider font-semibold text-[1.05rem] font-poppins text-dark-purple mt-12 animate-fade-in`}>
             {plan.name}
           </span>
-          <span className="my-4 font-bold text-4xl md:text-5xl text-blue-900 bg-yellow-50 rounded-2xl px-8 py-4 shadow-lg font-montserrat animate-fade-in">
+          <span className="my-4 font-bold text-4xl md:text-5xl text-dark-purple bg-white rounded-2xl px-8 py-4 shadow-lg font-montserrat animate-fade-in">
             {plan.price}
           </span>
           <span className="block text-md text-gray-700 mb-2 animate-fade-in">{plan.desc}</span>
           <ul className="mt-2 mb-6 flex-1 flex flex-col gap-2 w-full text-[13px] px-5">
             {idx === 0 && (
-              <li className="text-blue-900">Ideal para pequenos negócios em início de estruturação</li>
+              <li className="text-dark-charcoal">Ideal para pequenos negócios em início de estruturação</li>
             )}
             {idx === 1 && (
-              <li className="text-blue-900">Para empresas em crescimento que precisam de agilidade</li>
+              <li className="text-dark-charcoal">Para empresas em crescimento que precisam de agilidade</li>
             )}
             {idx === 2 && (
-              <li className="text-blue-900">Para empresas que não podem parar e precisam de performance máxima</li>
+              <li className="text-dark-charcoal">Para empresas que não podem parar e precisam de performance máxima</li>
             )}
           </ul>
         </div>
       ))}
     </div>
 
-    {/* Tabela de funcionalidades - layout dinâmico */}
     <div className="max-w-5xl mx-auto px-2 md:px-3">
-      <div className="overflow-x-auto rounded-2xl bg-white/80 shadow-2xl glass-morphism border border-blue-100">
+      <div className="overflow-x-auto rounded-2xl bg-white shadow-2xl border border-blue-100">
         <table className="min-w-[800px] w-full rounded-2xl border-separate border-spacing-y-1">
-          <thead className="bg-gradient-to-r from-blue-100 via-purple-100 to-white sticky top-0 z-10">
+          <thead className="bg-soft-gray sticky top-0 z-10">
             <tr>
-              <th className="py-4 px-4 text-left font-bold text-base rounded-tl-2xl text-blue-800 bg-transparent">
+              <th className="py-4 px-4 text-left font-bold text-base rounded-tl-2xl text-dark-purple bg-transparent">
                 Funcionalidade
               </th>
-              <th className="py-4 px-4 text-center font-bold text-base text-purple-800 bg-transparent">
+              <th className="py-4 px-4 text-center font-bold text-base text-dark-purple bg-transparent">
                 Básico
               </th>
-              <th className="py-4 px-4 text-center font-bold text-base text-purple-800 bg-transparent">
+              <th className="py-4 px-4 text-center font-bold text-base text-dark-purple bg-transparent">
                 Avançado
               </th>
-              <th className="py-4 px-4 text-center font-bold text-base text-purple-800 bg-transparent rounded-tr-2xl">
+              <th className="py-4 px-4 text-center font-bold text-base text-dark-purple bg-transparent rounded-tr-2xl">
                 Premium
               </th>
             </tr>
@@ -226,11 +219,11 @@ const ScreenshotsSection = () => (
               <tr
                 key={f.label || idx}
                 className={`
-                  ${f.highlight ? "bg-yellow-50/80" : (idx % 2 === 0 ? "bg-white/70" : "bg-blue-50/60")}
-                  border-y border-blue-100 hover:bg-purple-50/70 transition-colors group
+                  ${f.highlight ? "bg-soft-yellow/80" : (idx % 2 === 0 ? "bg-white" : "bg-soft-gray/60")}
+                  border-y border-blue-100 hover:bg-soft-purple/30 transition-colors group
                 `}
               >
-                <td className={`px-4 py-4 text-md ${f.highlight ? "font-bold text-blue-900" : "text-gray-800"} ${idx === 0 ? "rounded-l-xl" : ""}`}>
+                <td className={`px-4 py-4 text-md ${f.highlight ? "font-bold text-dark-purple" : "text-dark-charcoal"} ${idx === 0 ? "rounded-l-xl" : ""}`}>
                   {f.label}
                 </td>
                 <td className="py-4 px-2">{getCellValue(f.basic)}</td>
