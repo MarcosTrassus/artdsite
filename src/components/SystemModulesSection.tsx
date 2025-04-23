@@ -96,7 +96,7 @@ const modules = [
         description:
           "A tela de Listagem de Eventos é utilizada para organizar os eventos sociais de clientes, como casamentos, aniversários e formaturas. Permite registrar informações detalhadas sobre os noivos, familiares, data do evento e contatos, além de controlar a lista de participantes confirmados ou convidados.",
         imageAlt: "Tela de Listagem de Eventos",
-        imageSrc: "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Lista Eventos_1.png",
+        imageSrc: "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Lista%20Eventos_1.png",
         icon: <Calendar className="text-green-700 mr-2" />,
       },
       {
@@ -367,11 +367,8 @@ const SystemModulesSection = () => {
   const [selectedModuleKey, setSelectedModuleKey] = useState(modules[0].key);
   const [imageErrors, setImageErrors] = useState<{[key: string]: boolean}>({});
 
-  const handleImageClick = (imageSrc: string) => {
-    window.open(imageSrc, '_blank');
-  };
-
   const handleImageError = (title: string) => {
+    console.log(`Error loading image for ${title}`);
     setImageErrors(prev => ({...prev, [title]: true}));
   };
 
@@ -387,6 +384,13 @@ const SystemModulesSection = () => {
         return "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
       default:
         return "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
+    }
+  };
+  
+  const handleImageClick = (imageSrc: string) => {
+    if (imageSrc) {
+      console.log("Opening image:", imageSrc);
+      window.open(imageSrc, '_blank');
     }
   };
 
@@ -426,16 +430,15 @@ const SystemModulesSection = () => {
                         {feature.icon}
                         {feature.title}
                       </h3>
-                      <div 
-                        className="rounded-lg shadow mb-4 h-52 w-full bg-gray-50 border cursor-pointer overflow-hidden"
-                        onClick={() => !imageErrors[feature.title] && feature.imageSrc && handleImageClick(feature.imageSrc)}
-                      >
+                      <div className="rounded-lg shadow mb-4 h-52 w-full bg-gray-50 border overflow-hidden">
                         {feature.imageSrc && (
                           <img
                             src={imageErrors[feature.title] ? getFallbackImage(mod.key) : feature.imageSrc}
                             alt={feature.imageAlt || `Imagem de ${feature.title}`}
-                            className="w-full h-full object-cover object-center transition-transform hover:scale-105"
+                            className="w-full h-full object-contain hover:cursor-pointer"
                             onError={() => handleImageError(feature.title)}
+                            onClick={() => handleImageClick(feature.imageSrc)}
+                            loading="lazy"
                           />
                         )}
                       </div>
