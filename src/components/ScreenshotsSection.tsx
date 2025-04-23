@@ -10,9 +10,9 @@ const plans = [
 const functionalities = [
   {
     label: "Preços",
-    basic: <span className="text-xl font-bold text-blue-700">R$ 190,00</span>,
-    advanced: <span className="text-xl font-bold text-blue-700">R$ 290,00</span>,
-    premium: <span className="text-xl font-bold text-blue-700">R$ 490,00</span>,
+    basic: <span className="text-2xl font-bold text-blue-800 bg-blue-50 px-4 py-2 rounded-lg shadow-md">R$ 190,00</span>,
+    advanced: <span className="text-2xl font-bold text-blue-800 bg-blue-50 px-4 py-2 rounded-lg shadow-md">R$ 290,00</span>,
+    premium: <span className="text-2xl font-bold text-blue-800 bg-blue-50 px-4 py-2 rounded-lg shadow-md">R$ 490,00</span>,
     highlight: true,
   },
   {
