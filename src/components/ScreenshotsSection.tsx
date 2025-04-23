@@ -2,20 +2,21 @@
 import React from "react";
 import { Check, X } from "lucide-react";
 
+// Planos e cores
 const plans = [
   { name: "Básico", color: "text-blue-700" },
   { name: "Avançado", color: "text-blue-700" },
   { name: "Premium", color: "text-blue-700" },
 ];
 
+// Preços destacados
+const prices = [
+  { label: "Básico", value: "R$ 190,00" },
+  { label: "Avançado", value: "R$ 290,00" },
+  { label: "Premium", value: "R$ 490,00" },
+];
+
 const functionalities = [
-  {
-    label: "Preços",
-    basic: <span className="font-bold text-base text-blue-900 bg-yellow-100 rounded px-2 py-1 inline-block">R$ 190,00</span>,
-    advanced: <span className="font-bold text-base text-blue-900 bg-yellow-100 rounded px-2 py-1 inline-block">R$ 290,00</span>,
-    premium: <span className="font-bold text-base text-blue-900 bg-yellow-100 rounded px-2 py-1 inline-block">R$ 490,00</span>,
-    highlight: true,
-  },
   {
     label: "",
     basic: (
@@ -130,6 +131,26 @@ const ScreenshotsSection = () => (
     <h2 className="text-2xl md:text-3xl font-bold text-blue-700 text-center mb-10 font-montserrat">
       Planos e Preços
     </h2>
+    {/* Card de preços destacados */}
+    <div className="max-w-4xl mx-auto mb-10 px-2">
+      <div className="flex flex-col md:flex-row justify-center gap-4 animate-fade-in">
+        {prices.map((plan, idx) => (
+          <div
+            key={plan.label}
+            className={`flex-1 rounded-2xl shadow-lg bg-gradient-to-br from-yellow-100 via-white to-purple-50 border border-yellow-300 px-6 py-6 flex flex-col items-center justify-center ${
+              idx === 0
+                ? "md:mr-1"
+                : idx === prices.length - 1
+                ? "md:ml-1"
+                : ""
+            }`}
+          >
+            <span className="uppercase tracking-wide font-semibold text-blue-700 text-base mb-2">{plan.label}</span>
+            <span className="font-bold text-2xl md:text-3xl text-blue-900 bg-yellow-200 rounded px-4 py-2 shadow-md">{plan.value}</span>
+          </div>
+        ))}
+      </div>
+    </div>
     <div className="max-w-5xl mx-auto px-2">
       <div className="overflow-x-auto">
         <table className="min-w-[780px] w-full border rounded-lg shadow bg-white">
@@ -157,7 +178,7 @@ const ScreenshotsSection = () => (
                   <td className="py-3 px-2">{getCellValue(f.advanced)}</td>
                   <td className="py-3 px-2">{getCellValue(f.premium)}</td>
                 </tr>
-                {/* A linha de preços foi movida para o topo, não aparece mais aqui */}
+                {/* Preço foi movido para o card/banner acima */}
               </React.Fragment>
             ))}
           </tbody>
