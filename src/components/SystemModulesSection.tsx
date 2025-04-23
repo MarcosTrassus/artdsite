@@ -9,7 +9,7 @@ import {
   Briefcase,
   Book,
   Settings,
-  ShoppingBag,
+  Truck,
   Calendar,
   MapPin,
   ShoppingCart,
@@ -25,7 +25,6 @@ import {
   Search,
   Box,
   Building,
-  Truck
 } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
@@ -130,7 +129,7 @@ const modules = [
   {
     key: "operacional",
     label: "Operacional",
-    icon: <ShoppingBag className="mr-2" />,
+    icon: <Truck className="mr-2" />,
     features: [
       {
         title: "Aluguel",
