@@ -10,6 +10,7 @@ import {
   Book,
   Settings,
   Dress,
+  Smoking,
   Calendar,
   MapPin,
   ShoppingCart,
@@ -380,6 +381,11 @@ const SystemModulesSection = () => {
   const handleImageClick = (imageSrc: string) => {
     window.open(imageSrc, '_blank');
   };
+
+  const operationalModule = modules.find(mod => mod.key === "operacional");
+  if (operationalModule) {
+    operationalModule.icon = <Dress className="mr-2" />;
+  }
 
   return (
     <section className="w-full py-14 bg-white/80">
