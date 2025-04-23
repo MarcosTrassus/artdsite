@@ -48,8 +48,7 @@ const modules = [
         description:
           "A tela de Empresa permite o cadastro e a gestão das informações da empresa responsável pelo sistema. Nela, são registrados dados essenciais como razão social, nome fantasia, CNPJ, inscrição estadual, endereço, telefone, e-mail, além de logotipo e configurações complementares. Essas informações são utilizadas em relatórios, contratos, comprovantes e demais interações institucionais dentro do sistema, garantindo que os documentos reflitam corretamente a identidade da empresa.",
         imageAlt: "Tela de Cadastro de Empresa",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/empresa_dados.png",
+        imageSrc: "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/empresa_dados.png",
         icon: <Briefcase className="text-fuchsia-600 mr-2" />,
       },
       {
@@ -57,8 +56,7 @@ const modules = [
         description:
           "A tela de Prospect permite registrar os dados de possíveis clientes que demonstraram interesse na loja, mas que ainda não realizaram nenhum contrato. Nela é possível cadastrar informações básicas como nome, CPF, endereço, contato, evento de interesse e observações, além de um acompanhamento detalhado por meio da aba Agenda.",
         imageAlt: "Tela de Prospect",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/prospect_dados.png",
+        imageSrc: "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/prospect_dados.png",
         icon: <Info className="text-rose-600 mr-2" />,
       },
       {
@@ -66,8 +64,7 @@ const modules = [
         description:
           "A tela de Acervo é utilizada para o cadastro e controle de itens disponíveis para aluguel. Cada registro contém informações detalhadas como setor, modelo, cor, tamanho, tecido, categoria e valor de locação. Também é possível incluir observações, custo, estoque disponível e uma imagem ilustrativa do item.",
         imageAlt: "Tela de Acervo",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/acervo_detalhe.png",
+        imageSrc: "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/acervo_detalhe.png",
         icon: <Package className="text-orange-600 mr-2" />,
       },
       {
@@ -75,8 +72,7 @@ const modules = [
         description:
           "A tela Tipo de Acervo permite o cadastro das categorias utilizadas para classificar os itens disponíveis no sistema. Cada tipo possui uma sigla identificadora, descrição, setor relacionado (como feminino, masculino, noivas, etc.) e o gênero correspondente. Essas categorias ajudam a organizar o acervo, facilitando a busca e o agrupamento de itens nas demais telas do sistema.",
         imageAlt: "Tela Tipo de Acervo",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/tipo_acervo.png",
+        imageSrc: "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/tipo_acervo.png",
         icon: <List className="text-yellow-500 mr-2" />,
       },
       {
@@ -84,8 +80,7 @@ const modules = [
         description:
           "A tela de Atendentes permite o cadastro dos colaboradores responsáveis pelo atendimento na loja. Além dos dados pessoais e de contato, a tela permite acompanhar as comissões mensais geradas e os contratos realizados por cada atendente.",
         imageAlt: "Tela de Cadastro de Atendentes",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/atendente_cadastro.png",
+        imageSrc: "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/atendente_cadastro.png",
         icon: <User className="text-teal-600 mr-2" />,
       },
       {
@@ -93,8 +88,7 @@ const modules = [
         description:
           "A tela de Fornecedores permite o cadastro e a gestão dos parceiros comerciais responsáveis pelo fornecimento de produtos ou serviços. Nela são registrados dados como nome, CNPJ, IE, endereço, contatos, data de cadastro e status de atividade. Também é possível consultar o histórico de compras e visualizar os lançamentos financeiros vinculados ao fornecedor.",
         imageAlt: "Tela de Cadastro de Fornecedores",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/fornecedor_cadastro.png",
+        imageSrc: "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/fornecedor_cadastro.png",
         icon: <Phone className="text-sky-600 mr-2" />,
       },
       {
@@ -102,8 +96,7 @@ const modules = [
         description:
           "A tela de Listagem de Eventos é utilizada para organizar os eventos sociais de clientes, como casamentos, aniversários e formaturas. Permite registrar informações detalhadas sobre os noivos, familiares, data do evento e contatos, além de controlar a lista de participantes confirmados ou convidados.",
         imageAlt: "Tela de Listagem de Eventos",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Lista Eventos_1.png",
+        imageSrc: "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Lista Eventos_1.png",
         icon: <Calendar className="text-green-700 mr-2" />,
       },
       {
@@ -111,8 +104,7 @@ const modules = [
         description:
           "A tela de Senhas é utilizada para cadastrar e controlar os usuários que acessam o sistema. Nela é possível definir o nome, senha, perfil (como Gerente ou Administrador), nome de usuário e permissões específicas de ações como editar, pesquisar, excluir, imprimir e criar novos registros.",
         imageAlt: "Tela de Senhas",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Senha.png",
+        imageSrc: "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Senha.png",
         icon: <Settings className="text-gray-700 mr-2" />,
       },
       {
@@ -120,8 +112,7 @@ const modules = [
         description:
           "A tela de Configurações permite definir os principais parâmetros do sistema, como dados da empresa, endereços, logotipos e informações fiscais. Essas configurações são utilizadas em relatórios, documentos fiscais, DANFE e contratos.",
         imageAlt: "Tela de Configurações",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Parametros.png",
+        imageSrc: "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Parametros.png",
         icon: <Settings className="text-lime-700 mr-2" />,
       },
     ],
@@ -384,7 +375,6 @@ const SystemModulesSection = () => {
     setImageErrors(prev => ({...prev, [title]: true}));
   };
 
-  // Fallback image options based on category
   const getFallbackImage = (moduleKey: string) => {
     switch(moduleKey) {
       case 'cadastro':
@@ -399,22 +389,6 @@ const SystemModulesSection = () => {
         return "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
     }
   };
-
-  // Atualizando as imagens para todas as features em modules
-  modules.forEach(module => {
-    module.features.forEach(feature => {
-      // Definindo imagens confiáveis do Unsplash para cada feature
-      if (module.key === "cadastro") {
-        feature.imageSrc = "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
-      } else if (module.key === "operacional") {
-        feature.imageSrc = "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
-      } else if (module.key === "financeiro") {
-        feature.imageSrc = "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
-      } else if (module.key === "pesquisa") {
-        feature.imageSrc = "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
-      }
-    });
-  });
 
   return (
     <section className="w-full py-14 bg-white/80">
@@ -456,7 +430,28 @@ const SystemModulesSection = () => {
                         className="rounded-lg shadow mb-4 h-52 w-full bg-gray-50 border cursor-pointer overflow-hidden"
                         onClick={() => !imageErrors[feature.title] && feature.imageSrc && handleImageClick(feature.imageSrc)}
                       >
-                        {feature.imageSrc && !imageErrors[feature.title] ? (
+                        {feature.imageSrc && (
                           <img
-                            src={feature.imageSrc}
-                            alt={feature.imageAlt || `Imagem de ${feature
+                            src={imageErrors[feature.title] ? getFallbackImage(mod.key) : feature.imageSrc}
+                            alt={feature.imageAlt || `Imagem de ${feature.title}`}
+                            className="w-full h-full object-cover object-center transition-transform hover:scale-105"
+                            onError={() => handleImageError(feature.title)}
+                          />
+                        )}
+                      </div>
+                      <p className="text-gray-600 flex-grow text-sm">
+                        {feature.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </TabsContent>
+          ))}
+        </Tabs>
+      </div>
+    </section>
+  );
+};
+
+export default SystemModulesSection;
