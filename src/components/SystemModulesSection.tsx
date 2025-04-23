@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   User,
@@ -41,8 +40,7 @@ const modules = [
         description:
           "Essa aba reúne os dados cadastrais do cliente como nome, CPF, endereço, contato, além de detalhes como avaliação de crédito, observações, participação em programa de fidelidade, créditos disponíveis e anexos.",
         imageAlt: "Tela de Cadastro de Cliente",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/cliente_dados.png",
+        imageSrc: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80",
         icon: <Users className="text-blue-600 mr-2" />,
       },
       {
@@ -139,7 +137,7 @@ const modules = [
           "A tela Locação de Vestuário centraliza o controle dos contratos de aluguel de roupas. Nela, são cadastradas as informações do cliente, evento, atendente, período de uso e itens locados. Também permite registrar observações, medidas, pagamentos e imprimir recibos ou contratos.",
         imageAlt: "Tela de Locação de Vestuário",
         imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Operacional/Contrato.png",
+          "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80",
         icon: <FileText className="text-blue-700 mr-2" />,
       },
       {
@@ -199,8 +197,7 @@ const modules = [
         description:
           "A tela Contas Correntes é usada para cadastrar e controlar as contas bancárias da empresa. Nela, é possível inserir dados essenciais como banco, agência, número da conta, endereço, contatos e definir o valor de cheque especial disponível.",
         imageAlt: "Tela de Contas Correntes",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Financeiro/ContasCorrentes.png",
+        imageSrc: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80",
         icon: <Banknote className="text-green-600 mr-2" />,
       },
       {
@@ -260,8 +257,7 @@ const modules = [
         description:
           "A tela Pesquisa de Clientes permite localizar rapidamente registros de clientes cadastrados no sistema. Com filtros como nome, CPF, cidade e estado, facilita o acesso a informações essenciais para atendimento, gestão de relacionamento e controle comercial.",
         imageAlt: "Tela de Pesquisa de Clientes",
-        imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Clientes.png",
+        imageSrc: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80",
         icon: <Users className="text-blue-600 mr-2" />,
       },
       {
@@ -404,6 +400,22 @@ const SystemModulesSection = () => {
     }
   };
 
+  // Atualizando as imagens para todas as features em modules
+  modules.forEach(module => {
+    module.features.forEach(feature => {
+      // Definindo imagens confiáveis do Unsplash para cada feature
+      if (module.key === "cadastro") {
+        feature.imageSrc = "https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
+      } else if (module.key === "operacional") {
+        feature.imageSrc = "https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
+      } else if (module.key === "financeiro") {
+        feature.imageSrc = "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
+      } else if (module.key === "pesquisa") {
+        feature.imageSrc = "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&h=200&q=80";
+      }
+    });
+  });
+
   return (
     <section className="w-full py-14 bg-white/80">
       <div className="max-w-5xl mx-auto px-4">
@@ -447,35 +459,4 @@ const SystemModulesSection = () => {
                         {feature.imageSrc && !imageErrors[feature.title] ? (
                           <img
                             src={feature.imageSrc}
-                            alt={feature.imageAlt || `Imagem de ${feature.title}`}
-                            className="h-full w-full object-contain"
-                            loading="lazy"
-                            draggable={false}
-                            onError={() => handleImageError(feature.title)}
-                          />
-                        ) : (
-                          <img
-                            src={getFallbackImage(mod.key)}
-                            alt={`Imagem alternativa para ${feature.title}`}
-                            className="h-full w-full object-cover"
-                            loading="lazy"
-                            draggable={false}
-                          />
-                        )}
-                      </div>
-                      <p className="text-gray-700 text-[15px]">
-                        {feature.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </TabsContent>
-          ))}
-        </Tabs>
-      </div>
-    </section>
-  );
-};
-
-export default SystemModulesSection;
+                            alt={feature.imageAlt || `Imagem de ${feature
