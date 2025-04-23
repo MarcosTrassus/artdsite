@@ -9,8 +9,6 @@ import {
   Briefcase,
   Book,
   Settings,
-  Dress,
-  Smoking,
   Calendar,
   MapPin,
   ShoppingCart,
@@ -26,6 +24,8 @@ import {
   Search,
   Box,
   Building,
+  Shirt,
+  Truck,
 } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
@@ -130,7 +130,7 @@ const modules = [
   {
     key: "operacional",
     label: "Operacional",
-    icon: <Dress className="mr-2" />,
+    icon: <Shirt className="mr-2" />,
     features: [
       {
         title: "Aluguel",
@@ -384,7 +384,7 @@ const SystemModulesSection = () => {
 
   const operationalModule = modules.find(mod => mod.key === "operacional");
   if (operationalModule) {
-    operationalModule.icon = <Dress className="mr-2" />;
+    operationalModule.icon = <Shirt className="mr-2" />;
   }
 
   return (
