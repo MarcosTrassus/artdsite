@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Check, X } from "lucide-react";
 
@@ -5,9 +6,9 @@ const plans = [
   {
     name: "Básico",
     desc: "Essencial para começar",
-    colorBg: "bg-soft-gray",
-    shadow: "shadow-gray-200/30",
-    border: "border-gray-300",
+    colorBg: "bg-soft-green",
+    shadow: "shadow-green-200/30",
+    border: "border-green-500",
     price: "R$ 190,00",
     highlight: false,
     badge: false,
@@ -29,7 +30,7 @@ const plans = [
     desc: "Para empresas exigentes",
     colorBg: "bg-soft-blue",
     shadow: "shadow-blue-200/30",
-    border: "border-ocean-blue",
+    border: "border-blue-500",
     price: "R$ 490,00",
     highlight: false,
     badge: false,
@@ -141,9 +142,9 @@ const functionalities = [
 
 const getCellValue = (value: React.ReactNode | boolean | string | undefined) => {
   if (value === true)
-    return <Check className="mx-auto text-green-500" size={20} />;
+    return <Check className="mx-auto text-green-600" size={20} />;
   if (value === false)
-    return <X className="mx-auto text-red-400" size={20} />;
+    return <X className="mx-auto text-red-500" size={20} />;
   return <div className="text-center">{value}</div>;
 };
 
@@ -168,27 +169,27 @@ const ScreenshotsSection = () => (
           }}
         >
           {plan.badge && (
-            <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-vivid-purple text-white text-xs px-4 py-1.5 rounded-full shadow font-bold tracking-wide uppercase animate-fade-in">
+            <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-purple-600 text-white text-xs px-4 py-1.5 rounded-full shadow font-bold tracking-wide uppercase animate-fade-in">
               Mais vendido
             </span>
           )}
 
-          <span className={`uppercase tracking-wider font-semibold text-[1.05rem] font-poppins text-dark-purple mt-12 animate-fade-in`}>
+          <span className={`uppercase tracking-wider font-semibold text-[1.05rem] font-poppins text-purple-800 mt-12 animate-fade-in`}>
             {plan.name}
           </span>
-          <span className="my-4 font-bold text-4xl md:text-5xl text-dark-purple bg-white rounded-2xl px-8 py-4 shadow-lg font-montserrat animate-fade-in">
+          <span className="my-4 font-bold text-4xl md:text-5xl text-purple-900 bg-white rounded-2xl px-8 py-4 shadow-lg font-montserrat animate-fade-in">
             {plan.price}
           </span>
-          <span className="block text-md text-gray-700 mb-2 animate-fade-in">{plan.desc}</span>
+          <span className="block text-md text-purple-700 mb-2 animate-fade-in">{plan.desc}</span>
           <ul className="mt-2 mb-6 flex-1 flex flex-col gap-2 w-full text-[13px] px-5">
             {idx === 0 && (
-              <li className="text-dark-charcoal">Ideal para pequenos negócios em início de estruturação</li>
+              <li className="text-green-900">Ideal para pequenos negócios em início de estruturação</li>
             )}
             {idx === 1 && (
-              <li className="text-dark-charcoal">Para empresas em crescimento que precisam de agilidade</li>
+              <li className="text-purple-900">Para empresas em crescimento que precisam de agilidade</li>
             )}
             {idx === 2 && (
-              <li className="text-dark-charcoal">Para empresas que não podem parar e precisam de performance máxima</li>
+              <li className="text-blue-900">Para empresas que não podem parar e precisam de performance máxima</li>
             )}
           </ul>
         </div>
@@ -196,20 +197,20 @@ const ScreenshotsSection = () => (
     </div>
 
     <div className="max-w-5xl mx-auto px-2 md:px-3">
-      <div className="overflow-x-auto rounded-2xl bg-white shadow-2xl border border-blue-100">
+      <div className="overflow-x-auto rounded-2xl bg-white shadow-2xl border border-purple-100">
         <table className="min-w-[800px] w-full rounded-2xl border-separate border-spacing-y-1">
           <thead className="bg-soft-gray sticky top-0 z-10">
             <tr>
-              <th className="py-4 px-4 text-left font-bold text-base rounded-tl-2xl text-dark-purple bg-transparent">
+              <th className="py-4 px-4 text-left font-bold text-base rounded-tl-2xl text-purple-900 bg-transparent">
                 Funcionalidade
               </th>
-              <th className="py-4 px-4 text-center font-bold text-base text-dark-purple bg-transparent">
+              <th className="py-4 px-4 text-center font-bold text-base text-green-900 bg-transparent">
                 Básico
               </th>
-              <th className="py-4 px-4 text-center font-bold text-base text-dark-purple bg-transparent">
+              <th className="py-4 px-4 text-center font-bold text-base text-purple-900 bg-transparent">
                 Avançado
               </th>
-              <th className="py-4 px-4 text-center font-bold text-base text-dark-purple bg-transparent rounded-tr-2xl">
+              <th className="py-4 px-4 text-center font-bold text-base text-blue-900 rounded-tr-2xl bg-transparent">
                 Premium
               </th>
             </tr>
@@ -220,10 +221,10 @@ const ScreenshotsSection = () => (
                 key={f.label || idx}
                 className={`
                   ${f.highlight ? "bg-soft-yellow/80" : (idx % 2 === 0 ? "bg-white" : "bg-soft-gray/60")}
-                  border-y border-blue-100 hover:bg-soft-purple/30 transition-colors group
+                  border-y border-purple-100 hover:bg-soft-purple/30 transition-colors group
                 `}
               >
-                <td className={`px-4 py-4 text-md ${f.highlight ? "font-bold text-dark-purple" : "text-dark-charcoal"} ${idx === 0 ? "rounded-l-xl" : ""}`}>
+                <td className={`px-4 py-4 text-md ${f.highlight ? "font-bold text-purple-900" : "text-gray-800"} ${idx === 0 ? "rounded-l-xl" : ""}`}>
                   {f.label}
                 </td>
                 <td className="py-4 px-2">{getCellValue(f.basic)}</td>
@@ -243,3 +244,4 @@ const ScreenshotsSection = () => (
 );
 
 export default ScreenshotsSection;
+
