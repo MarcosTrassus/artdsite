@@ -1,7 +1,6 @@
+
 import React from "react";
 import { Check, X } from "lucide-react";
-
-const planNames = ["Básico", "Avançado", "Premium"];
 
 const tableData = [
   {
@@ -59,13 +58,15 @@ const tableData = [
       { name: "Pesquisa de Acervo", plans: [true, true, true] },
       { name: "Pesquisa de Itens Alugados", plans: [true, true, true] },
       { name: "Pesquisa de Provas", plans: [true, true, true] },
-      { name: "Pesquisa de Devoluções", plans: [true, true, true] },
-      { name: "Comissões", plans: [true, true, true] },
+      { name: "Devoluções", plans: [true, true, true] },
       { name: "Retiradas", plans: [true, true, true] },
+      { name: "Comissões", plans: [true, true, true] },
       { name: "Fechamento Diário", plans: [true, true, true] },
     ]
   }
 ];
+
+const planNames = ["Essencial", "Profissional", "Ilimitado"];
 
 const PricingTable: React.FC = () => {
   return (
@@ -101,13 +102,9 @@ const PricingTable: React.FC = () => {
                 {section.items.map((item, i) => (
                   <tr
                     key={item.name}
-                    className={`${
-                      i % 2 === 0 ? "bg-white" : "bg-gray-50 hover:bg-blue-50"
-                    } transition`}
+                    className={`${i % 2 === 0 ? "bg-white" : "bg-gray-50 hover:bg-blue-50"} transition`}
                   >
-                    <td className="px-4 py-2 text-gray-600 border-t text-sm">
-                      {item.name}
-                    </td>
+                    <td className="px-4 py-2 text-gray-600 border-t text-sm">{item.name}</td>
                     {item.plans.map((active, idx2) => (
                       <td key={idx2} className="py-2 text-center border-t">
                         {active ? (
