@@ -53,9 +53,9 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan, idx }) => {
       <span className="uppercase tracking-wider font-semibold text-[1.05rem] font-poppins text-purple-800 mt-12 animate-fade-in">
         {plan.name}
       </span>
-      <span className="my-4 font-bold text-4xl md:text-5xl text-purple-900 bg-white rounded-2xl px-8 py-4 shadow-lg font-montserrat animate-fade-in">
+      <div className="my-4 font-bold text-4xl md:text-5xl text-purple-900 bg-white rounded-2xl px-8 py-4 shadow-lg font-montserrat animate-fade-in">
         {plan.price}
-      </span>
+      </div>
       <span className="block text-md text-purple-700 mb-2 animate-fade-in">{plan.desc}</span>
       <ul className="mt-2 mb-6 flex-1 flex flex-col gap-2 w-full text-[13px] px-5">
         <li className={cardDescColors[idx]}>{planDescriptions[idx]}</li>
