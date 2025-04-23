@@ -1,163 +1,59 @@
+
 import React from "react";
-import { Check, X } from "lucide-react";
+import PricingCard from "./PricingCard";
+import PricingComparisonTable from "./PricingComparisonTable";
 
 const plans = [
-  { name: "Básico", color: "text-blue-700" },
-  { name: "Avançado", color: "text-blue-700" },
-  { name: "Premium", color: "text-blue-700" },
-];
-
-const functionalities = [
   {
-    label: "Preços",
-    basic: <span className="text-2xl font-bold text-blue-800 bg-blue-50 px-4 py-2 rounded-lg shadow-md">R$ 190,00</span>,
-    advanced: <span className="text-2xl font-bold text-blue-800 bg-blue-50 px-4 py-2 rounded-lg shadow-md">R$ 290,00</span>,
-    premium: <span className="text-2xl font-bold text-blue-800 bg-blue-50 px-4 py-2 rounded-lg shadow-md">R$ 490,00</span>,
+    name: "Básico",
+    desc: "Essencial para começar",
+    colorBg: "bg-[#F2FCE2]", // Soft Green pastel color
+    shadow: "shadow-green-200/30",
+    border: "border-green-500",
+    price: "R$190,00",
+    highlight: false,
+    badge: false,
+    z: "z-0"
+  },
+  {
+    name: "Avançado",
+    desc: "Mais vendido",
+    colorBg: "bg-[#E5DEFF]", // Soft Purple pastel color
+    shadow: "shadow-purple-300/40",
+    border: "border-vivid-purple",
+    price: "R$290,00",
     highlight: true,
+    badge: true,
+    z: "z-20"
   },
   {
-    label: "Suporte Via Chat",
-    basic: true,
-    advanced: true,
-    premium: true,
-  },
-  {
-    label: "Suporte Abertura de Chamada",
-    basic: true,
-    advanced: true,
-    premium: true,
-  },
-  {
-    label: "Suporte Acesso Remoto",
-    basic: "Até 1h por mês",
-    advanced: "Até 3h por mês",
-    premium: "Até 30h por mês",
-  },
-  {
-    label: "Atendimento via WhatsApp Comercial",
-    basic: (
-      <span className="text-[13px]">Horário comercial 8:30 as 18:00h - Segunda a Sexta</span>
-    ),
-    advanced: (
-      <span className="text-[13px]">Horário comercial 8:30 as 18:00h - Segunda a Sexta</span>
-    ),
-    premium: (
-      <span className="text-[13px]">Horário comercial 8:30 as 18:00h - Segunda a Sábado</span>
-    ),
-  },
-  {
-    label: "Atualizações Gratuitas",
-    basic: false,
-    advanced: true,
-    premium: true,
-  },
-  {
-    label: "E-commerce",
-    basic: false,
-    advanced: false,
-    premium: true,
-  },
-  {
-    label: "Manual do Sistema (HTML/PDF)",
-    basic: true,
-    advanced: true,
-    premium: true,
-  },
-  {
-    label: "Atualizações do Sistema",
-    basic: "Semestrais",
-    advanced: "Trimestrais",
-    premium: "Mensais",
-  },
-  {
-    label: "Backup Automático",
-    basic: false,
-    advanced: true,
-    premium: true,
-  },
-  {
-    label: "Canal de Sugestões para Melhorias",
-    basic: true,
-    advanced: true,
-    premium: true,
-  },
-  {
-    label: "Pacotes de Créditos de Customização",
-    basic: <span className="text-red-700">Não incluso</span>,
-    advanced: <span className="text-red-700">Não incluso</span>,
-    premium: (
-      <span className="text-green-700">
-        Pacotes<br />
-        15 créditos R$ 600,00<br />
-        30 créditos R$ 900,00<br />
-        50 créditos R$ 1.250,00
-      </span>
-    ),
-    highlight: true,
-  },
-  {
-    label: "Instalação Adicional",
-    basic: <span className="text-gray-700">R$ 50,00/máquina</span>,
-    advanced: <span className="text-gray-700">R$ 75,00/máquina</span>,
-    premium: <span className="text-gray-700">R$ 125,00/máquina</span>,
+    name: "Premium",
+    desc: "Para empresas exigentes",
+    colorBg: "bg-[#D3E4FD]", // Soft Blue pastel color
+    shadow: "shadow-blue-200/30",
+    border: "border-blue-500",
+    price: "R$490,00",
+    highlight: false,
+    badge: false,
+    z: "z-10"
   },
 ];
-
-const getCellValue = (value: React.ReactNode | boolean | string | undefined) => {
-  if (value === true)
-    return <Check className="mx-auto text-green-600" size={20} />;
-  if (value === false)
-    return <X className="mx-auto text-red-600" size={20} />;
-  return <div className="text-center">{value}</div>;
-};
 
 const ScreenshotsSection = () => (
-  <section className="w-full bg-gradient-to-r from-purple-50 via-white to-blue-50 py-14">
-    <h2 className="text-2xl md:text-3xl font-bold text-blue-700 text-center mb-10 font-montserrat">
+  <section className="w-full bg-white py-16 md:py-24">
+    <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-12 font-montserrat tracking-tight drop-shadow animate-fade-in">
       Planos e Preços
     </h2>
-    <div className="max-w-5xl mx-auto px-2">
-      <div className="overflow-x-auto">
-        <table className="min-w-[780px] w-full border rounded-lg shadow bg-white">
-          <thead>
-            <tr>
-              <th className="py-4 px-4 text-left font-bold text-base border-b bg-blue-100 text-gray-800">
-                Funcionalidade
-              </th>
-              {plans.map((plan) => (
-                <th
-                  key={plan.name}
-                  className={`py-4 px-4 text-center font-bold text-base border-b bg-blue-100 ${plan.color}`}
-                >
-                  {plan.name}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {functionalities.map((f, idx) => (
-              <React.Fragment key={f.label || idx}>
-                <tr className={f.highlight ? "bg-gray-50" : (idx % 2 === 0 ? "bg-white" : "bg-gray-50")}>
-                  <td className={`px-4 py-3 ${f.highlight ? "" : "text-gray-800"}`}>{f.label}</td>
-                  <td className="py-3 px-2">{getCellValue(f.basic)}</td>
-                  <td className="py-3 px-2">{getCellValue(f.advanced)}</td>
-                  <td className="py-3 px-2">{getCellValue(f.premium)}</td>
-                </tr>
-                {f.label === "Instalação Adicional" && (
-                  <tr className="bg-white">
-                    <td className="px-4 py-3 text-gray-800 text-base">Preços</td>
-                    <td className="py-3 px-2 text-center text-base">R$ 190,00</td>
-                    <td className="py-3 px-2 text-center text-base">R$ 290,00</td>
-                    <td className="py-3 px-2 text-center text-base">R$ 490,00</td>
-                  </tr>
-                )}
-              </React.Fragment>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <p className="text-center text-gray-600 text-sm mt-8 mx-auto max-w-xl">
-        Todos os planos incluem suporte via chat e abertura de chamados. Consulte as opções de créditos de desenvolvimento e condições especiais para sua empresa.
+    <div className="relative max-w-5xl mx-auto mb-14 flex flex-col md:flex-row md:justify-center gap-6 px-4">
+      {plans.map((plan, idx) => (
+        <PricingCard key={plan.name} plan={plan} idx={idx} />
+      ))}
+    </div>
+    <div className="max-w-5xl mx-auto px-2 md:px-3">
+      <PricingComparisonTable />
+      <p className="text-center text-gray-600 text-base mt-8 mx-auto max-w-xl">
+        Todos os planos incluem suporte via chat e abertura de chamados.<br />
+        Consulte as opções de créditos de desenvolvimento e condições especiais para sua empresa.
       </p>
     </div>
   </section>
