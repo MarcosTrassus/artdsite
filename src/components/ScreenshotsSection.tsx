@@ -89,10 +89,10 @@ const functionalities = [
   },
   {
     label: "Pacotes de Créditos de Customização",
-    basic: <span className="text-red-700 font-semibold">Não incluso</span>,
-    advanced: <span className="text-red-700 font-semibold">Não incluso</span>,
+    basic: <span className="text-red-700">Não incluso</span>,
+    advanced: <span className="text-red-700">Não incluso</span>,
     premium: (
-      <span className="text-green-700 font-semibold">
+      <span className="text-green-700">
         Pacotes<br />
         15 créditos R$ 600,00<br />
         30 créditos R$ 900,00<br />
