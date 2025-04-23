@@ -1,19 +1,11 @@
-
 import React from "react";
 import { Check, X } from "lucide-react";
 
 // Planos e cores
 const plans = [
-  { name: "Básico", color: "text-blue-700" },
-  { name: "Avançado", color: "text-blue-700" },
-  { name: "Premium", color: "text-blue-700" },
-];
-
-// Preços destacados
-const prices = [
-  { label: "Básico", value: "R$ 190,00" },
-  { label: "Avançado", value: "R$ 290,00" },
-  { label: "Premium", value: "R$ 490,00" },
+  { name: "Básico", color: "from-yellow-100 via-white to-yellow-50", price: "R$ 190,00" },
+  { name: "Avançado", color: "from-purple-100 via-white to-blue-50", price: "R$ 290,00" },
+  { name: "Premium", color: "from-blue-100 via-white to-purple-50", price: "R$ 490,00" },
 ];
 
 const functionalities = [
@@ -128,29 +120,35 @@ const getCellValue = (value: React.ReactNode | boolean | string | undefined) => 
 
 const ScreenshotsSection = () => (
   <section className="w-full bg-gradient-to-r from-purple-50 via-white to-blue-50 py-14">
-    <h2 className="text-2xl md:text-3xl font-bold text-blue-700 text-center mb-10 font-montserrat">
+    <h2 className="text-3xl md:text-4xl font-bold text-blue-700 text-center mb-10 font-montserrat tracking-tight drop-shadow">
       Planos e Preços
     </h2>
-    {/* Card de preços destacados */}
-    <div className="max-w-4xl mx-auto mb-10 px-2">
-      <div className="flex flex-col md:flex-row justify-center gap-4 animate-fade-in">
-        {prices.map((plan, idx) => (
+    {/* Cards de preços - VISUAL MODERNO */}
+    <div className="max-w-6xl mx-auto mb-14 px-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        {plans.map((plan, idx) => (
           <div
-            key={plan.label}
-            className={`flex-1 rounded-2xl shadow-lg bg-gradient-to-br from-yellow-100 via-white to-purple-50 border border-yellow-300 px-6 py-6 flex flex-col items-center justify-center ${
-              idx === 0
-                ? "md:mr-1"
-                : idx === prices.length - 1
-                ? "md:ml-1"
-                : ""
-            }`}
+            key={plan.name}
+            className={`
+              relative rounded-3xl border border-yellow-200 bg-gradient-to-br ${plan.color}
+              shadow-xl flex flex-col items-center px-7 py-9 transition-transform duration-300 hover:scale-105 hover:shadow-2xl
+              ${idx === 1 ? "md:scale-105 border-2 border-purple-400 shadow-2xl z-10" : ""}
+            `}
           >
-            <span className="uppercase tracking-wide font-semibold text-blue-700 text-base mb-2">{plan.label}</span>
-            <span className="font-bold text-2xl md:text-3xl text-blue-900 bg-yellow-200 rounded px-4 py-2 shadow-md">{plan.value}</span>
+            <span className="uppercase tracking-wide font-semibold text-blue-700 text-base mb-3 font-poppins">{plan.name}</span>
+            <span className="font-bold text-3xl md:text-4xl text-blue-900 bg-yellow-100 rounded-xl px-8 py-4 shadow-lg mb-3 font-montserrat">
+              {plan.price}
+            </span>
+            <span className="block text-sm text-gray-700 mb-2">
+              {idx === 0 && "Plano Essencial"}
+              {idx === 1 && "Mais vendido"}
+              {idx === 2 && "Recursos completos"}
+            </span>
           </div>
         ))}
       </div>
     </div>
+    {/* Funcionalidades em tabela */}
     <div className="max-w-5xl mx-auto px-2">
       <div className="overflow-x-auto">
         <table className="min-w-[780px] w-full border rounded-lg shadow bg-white">
@@ -159,14 +157,15 @@ const ScreenshotsSection = () => (
               <th className="py-4 px-4 text-left font-bold text-base border-b bg-blue-100 text-gray-800">
                 Funcionalidade
               </th>
-              {plans.map((plan) => (
-                <th
-                  key={plan.name}
-                  className={`py-4 px-4 text-center font-bold text-base border-b bg-blue-100 ${plan.color}`}
-                >
-                  {plan.name}
-                </th>
-              ))}
+              <th className="py-4 px-4 text-center font-bold text-base border-b bg-blue-100 text-blue-700">
+                Básico
+              </th>
+              <th className="py-4 px-4 text-center font-bold text-base border-b bg-blue-100 text-blue-700">
+                Avançado
+              </th>
+              <th className="py-4 px-4 text-center font-bold text-base border-b bg-blue-100 text-blue-700">
+                Premium
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -192,4 +191,3 @@ const ScreenshotsSection = () => (
 );
 
 export default ScreenshotsSection;
-
