@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import {
   User,
@@ -131,7 +132,7 @@ const modules = [
   {
     key: "operacional",
     label: "Operacional",
-    icon: <ShoppingBag className="mr-2" />,
+    icon: <Dress className="mr-2" />,
     features: [
       {
         title: "Aluguel",
@@ -382,6 +383,12 @@ const SystemModulesSection = () => {
   const handleImageClick = (imageSrc: string) => {
     window.open(imageSrc, '_blank');
   };
+
+  // Update the icon for the operational module to use available icons
+  const operationalModule = modules.find(mod => mod.key === "operacional");
+  if (operationalModule) {
+    operationalModule.icon = <ShoppingBag className="mr-2" />;
+  }
 
   return (
     <section className="w-full py-14 bg-white/80">
