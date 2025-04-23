@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Check, X } from "lucide-react";
 
@@ -89,7 +88,7 @@ const functionalities = [
     premium: true,
   },
   {
-    label: "Pacotes de Créditos de Desenvolvimento",
+    label: "Pacotes de Créditos de Customização",
     basic: <span className="text-red-700 font-semibold">Não incluso</span>,
     advanced: <span className="text-red-700 font-semibold">Não incluso</span>,
     premium: (
