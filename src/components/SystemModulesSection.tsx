@@ -9,7 +9,7 @@ import {
   Briefcase,
   Book,
   Settings,
-  Truck,
+  Dress,
   Calendar,
   MapPin,
   ShoppingCart,
@@ -129,7 +129,7 @@ const modules = [
   {
     key: "operacional",
     label: "Operacional",
-    icon: <Truck className="mr-2" />,
+    icon: <Dress className="mr-2" />,
     features: [
       {
         title: "Aluguel",
