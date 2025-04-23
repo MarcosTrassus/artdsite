@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   User,
@@ -416,17 +415,28 @@ const SystemModulesSection = () => {
                       className="bg-white rounded-xl p-6 flex flex-col shadow-md border border-blue-100"
                     >
                       <h3 className="font-semibold text-lg text-blue-700 mb-2 flex items-center">
-                        {feature.icon && feature.icon}
+                        {feature.icon}
                         {feature.title}
                       </h3>
-                      <img
-                        src={feature.imageSrc}
-                        alt={feature.imageAlt}
-                        className="rounded-lg shadow mb-4 object-contain h-52 w-full bg-gray-50 border cursor-pointer"
-                        loading="lazy"
-                        draggable={false}
-                        onClick={() => handleImageClick(feature.imageSrc)}
-                      />
+                      {feature.imageSrc ? (
+                        <img
+                          src={feature.imageSrc}
+                          alt={feature.imageAlt || `Imagem de ${feature.title}`}
+                          className="rounded-lg shadow mb-4 object-contain h-52 w-full bg-gray-50 border cursor-pointer"
+                          loading="lazy"
+                          draggable={false}
+                          onClick={() => handleImageClick(feature.imageSrc)}
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.onerror = null;
+                            target.src = "https://via.placeholder.com/400x200?text=Imagem+Indisponível";
+                          }}
+                        />
+                      ) : (
+                        <div className="rounded-lg shadow mb-4 h-52 w-full bg-gray-50 border flex items-center justify-center text-gray-400">
+                          Imagem indisponível
+                        </div>
+                      )}
                       <p className="text-gray-700 text-[15px]">
                         {feature.description}
                       </p>

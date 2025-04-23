@@ -8,6 +8,11 @@ const HeroSection = () => {
         src="https://monitor.aluguelderoupas.trassusdigital.com.br/Imagem/header_dashboard_site.png" 
         alt="Dashboard Header" 
         className="w-full h-full object-cover object-center"
+        onError={(e) => {
+          const target = e.target as HTMLImageElement;
+          target.onerror = null;
+          target.src = "https://via.placeholder.com/1200x600?text=Dashboard+Header";
+        }}
       />
       <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
         <div className="text-center text-white px-4">
