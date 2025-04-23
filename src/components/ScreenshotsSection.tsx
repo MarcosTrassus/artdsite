@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Check, X } from "lucide-react";
 
@@ -10,16 +9,10 @@ const plans = [
 
 const functionalities = [
   {
-    label: "",
-    basic: (
-      <span className="text-[13px] text-blue-900">Ideal para pequenos negócios em início de estruturação</span>
-    ),
-    advanced: (
-      <span className="text-[13px] text-blue-900">Para empresas em crescimento que precisam de agilidade</span>
-    ),
-    premium: (
-      <span className="text-[13px] text-blue-900">Para empresas que não podem parar e precisam de performance máxima</span>
-    ),
+    label: "Preços",
+    basic: <span className="text-xl font-bold text-blue-700">R$ 190,00</span>,
+    advanced: <span className="text-xl font-bold text-blue-700">R$ 290,00</span>,
+    premium: <span className="text-xl font-bold text-blue-700">R$ 490,00</span>,
     highlight: true,
   },
   {
@@ -150,7 +143,6 @@ const ScreenshotsSection = () => (
                   <td className="py-3 px-2">{getCellValue(f.advanced)}</td>
                   <td className="py-3 px-2">{getCellValue(f.premium)}</td>
                 </tr>
-                {/* Add the prices row immediately after "Instalação Adicional" */}
                 {f.label === "Instalação Adicional" && (
                   <tr className="bg-white">
                     <td className="px-4 py-3 text-gray-800 text-base">Preços</td>
@@ -172,4 +164,3 @@ const ScreenshotsSection = () => (
 );
 
 export default ScreenshotsSection;
-
