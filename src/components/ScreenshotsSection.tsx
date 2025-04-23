@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Check, X } from "lucide-react";
 
@@ -142,12 +143,23 @@ const ScreenshotsSection = () => (
           </thead>
           <tbody>
             {functionalities.map((f, idx) => (
-              <tr key={f.label || idx} className={f.highlight ? "bg-gray-50" : (idx % 2 === 0 ? "bg-white" : "bg-gray-50")}>
-                <td className={`px-4 py-3 ${f.highlight ? "font-semibold" : "text-gray-800"}`}>{f.label}</td>
-                <td className="py-3 px-2">{getCellValue(f.basic)}</td>
-                <td className="py-3 px-2">{getCellValue(f.advanced)}</td>
-                <td className="py-3 px-2">{getCellValue(f.premium)}</td>
-              </tr>
+              <React.Fragment key={f.label || idx}>
+                <tr className={f.highlight ? "bg-gray-50" : (idx % 2 === 0 ? "bg-white" : "bg-gray-50")}>
+                  <td className={`px-4 py-3 ${f.highlight ? "" : "text-gray-800"}`}>{f.label}</td>
+                  <td className="py-3 px-2">{getCellValue(f.basic)}</td>
+                  <td className="py-3 px-2">{getCellValue(f.advanced)}</td>
+                  <td className="py-3 px-2">{getCellValue(f.premium)}</td>
+                </tr>
+                {/* Add the prices row immediately after "Instalação Adicional" */}
+                {f.label === "Instalação Adicional" && (
+                  <tr className="bg-white">
+                    <td className="px-4 py-3 text-gray-800 text-base">Preços</td>
+                    <td className="py-3 px-2 text-center text-base">R$ 190,00</td>
+                    <td className="py-3 px-2 text-center text-base">R$ 290,00</td>
+                    <td className="py-3 px-2 text-center text-base">R$ 490,00</td>
+                  </tr>
+                )}
+              </React.Fragment>
             ))}
           </tbody>
         </table>
@@ -160,3 +172,4 @@ const ScreenshotsSection = () => (
 );
 
 export default ScreenshotsSection;
+
