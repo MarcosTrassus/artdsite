@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import {
   User,
@@ -9,8 +10,8 @@ import {
   Briefcase,
   Book,
   Settings,
-  Dress,
-  Smoking,
+  ShoppingBag,
+  Shirt,
   Calendar,
   MapPin,
   ShoppingCart,
@@ -26,6 +27,7 @@ import {
   Search,
   Box,
   Building,
+  Truck,
 } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
@@ -382,9 +384,10 @@ const SystemModulesSection = () => {
     window.open(imageSrc, '_blank');
   };
 
+  // Update the icon for the operational module to use available icons
   const operationalModule = modules.find(mod => mod.key === "operacional");
   if (operationalModule) {
-    operationalModule.icon = <Dress className="mr-2" />;
+    operationalModule.icon = <ShoppingBag className="mr-2" />;
   }
 
   return (
