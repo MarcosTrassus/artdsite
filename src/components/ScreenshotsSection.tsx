@@ -10,13 +10,6 @@ const plans = [
 
 const functionalities = [
   {
-    label: "Preços",
-    basic: <span className="font-bold text-base text-blue-900 bg-yellow-100 rounded px-2 py-1 inline-block">R$ 190,00</span>,
-    advanced: <span className="font-bold text-base text-blue-900 bg-yellow-100 rounded px-2 py-1 inline-block">R$ 290,00</span>,
-    premium: <span className="font-bold text-base text-blue-900 bg-yellow-100 rounded px-2 py-1 inline-block">R$ 490,00</span>,
-    highlight: true,
-  },
-  {
     label: "",
     basic: (
       <span className="text-[13px] text-blue-900">Ideal para pequenos negócios em início de estruturação</span>
@@ -151,13 +144,21 @@ const ScreenshotsSection = () => (
           <tbody>
             {functionalities.map((f, idx) => (
               <React.Fragment key={f.label || idx}>
-                <tr className={f.highlight ? "bg-yellow-50" : (idx % 2 === 0 ? "bg-white" : "bg-gray-50")}>
-                  <td className={`px-4 py-3 ${f.highlight ? "font-bold text-blue-900 text-base" : "text-gray-800"}`}>{f.label}</td>
+                <tr className={f.highlight ? "bg-gray-50" : (idx % 2 === 0 ? "bg-white" : "bg-gray-50")}>
+                  <td className={`px-4 py-3 ${f.highlight ? "" : "text-gray-800"}`}>{f.label}</td>
                   <td className="py-3 px-2">{getCellValue(f.basic)}</td>
                   <td className="py-3 px-2">{getCellValue(f.advanced)}</td>
                   <td className="py-3 px-2">{getCellValue(f.premium)}</td>
                 </tr>
-                {/* A linha de preços foi movida para o topo, não aparece mais aqui */}
+                {/* Add the prices row immediately after "Instalação Adicional" */}
+                {f.label === "Instalação Adicional" && (
+                  <tr className="bg-white">
+                    <td className="px-4 py-3 text-gray-800 text-base">Preços</td>
+                    <td className="py-3 px-2 text-center text-base">R$ 190,00</td>
+                    <td className="py-3 px-2 text-center text-base">R$ 290,00</td>
+                    <td className="py-3 px-2 text-center text-base">R$ 490,00</td>
+                  </tr>
+                )}
               </React.Fragment>
             ))}
           </tbody>
