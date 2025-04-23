@@ -4,7 +4,7 @@ import { Check, FileText, User, List, Calendar, Settings } from "lucide-react";
 const features = [
   {
     icon: List,
-    title: "Controle de Aluguéis",
+    title: "Controle de Aluguéis de Roupas",  // Updated text here
     description: "Gerencie todos os contratos e ordens de aluguel em tempo real."
   },
   {
