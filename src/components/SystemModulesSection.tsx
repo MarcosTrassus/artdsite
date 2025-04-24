@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import {
   User,
   Users,
@@ -27,7 +28,6 @@ import {
   Shirt,
   Truck,
 } from "lucide-react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const modules = [
   {
@@ -390,7 +390,7 @@ const SystemModulesSection = () => {
   return (
     <section className="w-full py-14 bg-white/80">
       <div className="max-w-5xl mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-blue-800 text-center mb-8 font-montserrat">
+        <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-12 font-montserrat tracking-tight drop-shadow animate-fade-in">
           Módulos do Sistema
         </h2>
         <Tabs value={selectedModuleKey} onValueChange={setSelectedModuleKey}>

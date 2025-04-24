@@ -1,3 +1,4 @@
+
 import { Check, FileText, User, List, Calendar, Settings } from "lucide-react";
 
 const features = [
@@ -35,7 +36,7 @@ const features = [
 
 const FeaturesSection = () => (
   <section className="section-padding bg-gradient-to-r from-blue-50 via-white to-purple-50 w-full">
-    <h2 className="text-2xl md:text-3xl font-bold text-purple-700 text-center mb-10 font-montserrat">
+    <h2 className="text-4xl md:text-5xl font-bold text-primary text-center mb-12 font-montserrat tracking-tight drop-shadow animate-fade-in">
       Funcionalidades Principais
     </h2>
     <div className="max-w-6xl mx-auto">
