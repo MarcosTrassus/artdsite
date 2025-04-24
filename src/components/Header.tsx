@@ -1,6 +1,7 @@
 
-import { Home, GridIcon, LayoutList, Package, Mail } from "lucide-react";
+import { Home, GridIcon, LayoutList, Package, Mail, Contact } from "lucide-react";
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const scrollToSection = (id: string) => {
@@ -51,13 +52,13 @@ const Header = () => {
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink
-              onClick={() => scrollToSection("contact")}
-              className="group inline-flex items-center text-gray-700 hover:text-blue-600 cursor-pointer"
+            <Link
+              to="/contact"
+              className="group inline-flex items-center text-gray-700 hover:text-blue-600"
             >
-              <Mail className="w-4 h-4 mr-2" />
+              <Contact className="w-4 h-4 mr-2" />
               <span>Contato</span>
-            </NavigationMenuLink>
+            </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
