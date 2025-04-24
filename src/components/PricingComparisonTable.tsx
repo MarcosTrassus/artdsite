@@ -71,7 +71,7 @@ const functionalities = [
   },
   {
     label: "Backup Automático",
-    basic: false,
+    basic: true,
     advanced: true,
     premium: true,
   },
