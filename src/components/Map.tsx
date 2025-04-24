@@ -19,7 +19,7 @@ const Map: React.FC<MapProps> = ({ className }) => {
     // TODO: Replace with your Mapbox token
     mapboxgl.accessToken = 'YOUR_MAPBOX_PUBLIC_TOKEN';
     
-    const coordinates = [-43.3367, -22.8067]; // Coordinates for Rua Carolina Machado, 560
+    const coordinates: [number, number] = [-43.3367, -22.8067]; // Coordinates for Rua Carolina Machado, 560
 
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
@@ -52,3 +52,4 @@ const Map: React.FC<MapProps> = ({ className }) => {
 };
 
 export default Map;
+
