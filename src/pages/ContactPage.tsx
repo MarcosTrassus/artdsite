@@ -1,5 +1,4 @@
-
-import { Mail, Phone, Contact } from "lucide-react";
+import { Mail, Phone, Contact, MapPin } from "lucide-react";
 import Header from "../components/Header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,6 +7,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Map from "../components/Map";
 
 // Form validation schema
 const contactFormSchema = z.object({
@@ -39,23 +39,62 @@ const ContactPage = () => {
     <div className="bg-gradient-to-tr from-blue-100 via-purple-100 to-white min-h-screen font-poppins">
       <Header />
       <div className="container mx-auto px-4 pt-24 pb-12">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg">
-            <h2 className="text-3xl font-bold text-blue-800 mb-6">Entre em Contato</h2>
-            <div className="space-y-4">
-              <div className="flex items-center space-x-4">
-                <Mail className="text-blue-600" />
-                <span>contato@trassusdigital.com.br</span>
+          <div className="space-y-8">
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+              <h2 className="text-3xl font-bold text-blue-800 mb-6">Entre em Contato</h2>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <Mail className="text-blue-600" />
+                  <span>contato@trassusdigital.com.br</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Phone className="text-blue-600" />
+                  <a href="https://wa.me/5521985694910" className="hover:text-blue-600 transition-colors">
+                    (21) 98569-4910
+                  </a>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <Contact className="text-blue-600" />
+                  <span>Segunda a Sexta: 8:30 - 18h</span>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <MapPin className="text-blue-600" />
+                  <span>Rua Carolina Machado, 560 - Madureira - RJ</span>
+                </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <Phone className="text-blue-600" />
-                <span>21 98569-4910</span>
+            </div>
+
+            {/* Social Media Links */}
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold text-blue-800 mb-4">Redes Sociais</h3>
+              <div className="space-y-3">
+                <a 
+                  href="https://wa.me/5521985694910" 
+                  className="flex items-center space-x-3 hover:text-blue-600 transition-colors"
+                >
+                  <span>WhatsApp: (21) 98569-4910</span>
+                </a>
+                <a 
+                  href="https://instagram.com/digitaltrassus" 
+                  className="flex items-center space-x-3 hover:text-blue-600 transition-colors"
+                >
+                  <span>Instagram: @digitaltrassus</span>
+                </a>
+                <a 
+                  href="https://facebook.com/digitaltrassus" 
+                  className="flex items-center space-x-3 hover:text-blue-600 transition-colors"
+                >
+                  <span>Facebook: @digitaltrassus</span>
+                </a>
               </div>
-              <div className="flex items-center space-x-4">
-                <Contact className="text-blue-600" />
-                <span>Segunda a Sexta: 8:30 - 18h</span>
-              </div>
+            </div>
+
+            {/* Map */}
+            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-xl shadow-lg">
+              <h3 className="text-xl font-semibold text-blue-800 mb-4">Localização</h3>
+              <Map className="w-full" />
             </div>
           </div>
 
