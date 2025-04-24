@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Check, X } from "lucide-react";
 
@@ -104,6 +103,254 @@ const functionalities = [
   },
 ];
 
+const modulesFunctionalities = [
+  {
+    label: "Módulo / Funcionalidade",
+    basic: "Básico",
+    advanced: "Avançado",
+    premium: "Premium",
+    isHeader: true
+  },
+  {
+    label: "Cadastro",
+    isSection: true
+  },
+  {
+    label: "Clientes",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Empresa",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Prospect",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Acervo",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Tipo Acervo",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Atendentes",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Fornecedores",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Listagem de Festas",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Configurações",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Senhas",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Operacional",
+    isSection: true
+  },
+  {
+    label: "Aluguel",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Envio automático do Contrato via WhatsApp",
+    basic: false,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Lembrete de Prova via WhatsApp",
+    basic: false,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Lembrete de Retirada via WhatsApp",
+    basic: false,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Lembrete de Devolução via WhatsApp",
+    basic: false,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Mensagens WhatsApp",
+    basic: false,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Tipo de Eventos",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Setores",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Venda",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Backup",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Agenda",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Financeiro",
+    isSection: true
+  },
+  {
+    label: "Contas Correntes",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Movimentações",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Projeção de Receita",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Despesas",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Plano de Contas",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Compras",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Pesquisa",
+    isSection: true
+  },
+  {
+    label: "Pesquisa de Clientes",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Pesquisa de Contratos",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Pesquisa de Atendentes",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Pesquisa de Acervo",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Pesquisa de Itens Alugados",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Pesquisa de Provas",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Pesquisa de Devoluções",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Convidados",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Retiradas",
+    basic: true,
+    advanced: true,
+    premium: true
+  },
+  {
+    label: "Fechamento Diário",
+    basic: true,
+    advanced: true,
+    premium: true
+  }
+];
+
 const getCellValue = (value: React.ReactNode | boolean | string | undefined) => {
   if (value === true)
     return <Check className="mx-auto text-green-600" size={20} />;
@@ -112,45 +359,49 @@ const getCellValue = (value: React.ReactNode | boolean | string | undefined) => 
   return <div className="text-center">{value}</div>;
 };
 
-const PricingComparisonTable: React.FC = () => (
-  <div className="overflow-x-auto rounded-2xl bg-white shadow-2xl border border-purple-100">
-    <table className="min-w-[800px] w-full rounded-2xl border-separate border-spacing-y-1">
-      <thead className="bg-soft-gray sticky top-0 z-10">
-        <tr>
-          <th className="py-4 px-4 text-left font-bold text-base rounded-tl-2xl text-purple-900 bg-transparent">
-            Funcionalidade
-          </th>
-          <th className="py-4 px-4 text-center font-bold text-base text-green-900 bg-transparent">
-            Básico
-          </th>
-          <th className="py-4 px-4 text-center font-bold text-base text-purple-900 bg-transparent">
-            Avançado
-          </th>
-          <th className="py-4 px-4 text-center font-bold text-base text-blue-900 rounded-tr-2xl bg-transparent">
-            Premium
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {functionalities.map((f, idx) => (
-          <tr
-            key={f.label || idx}
-            className={`
-              ${f.highlight ? "bg-soft-yellow/80" : (idx % 2 === 0 ? "bg-white" : "bg-soft-gray/60")}
-              border-y border-purple-100 hover:bg-soft-purple/30 transition-colors group
-            `}
-          >
-            <td className={`px-4 py-4 text-md ${f.highlight ? "font-bold text-purple-900" : "text-gray-800"} ${idx === 0 ? "rounded-l-xl" : ""}`}>
-              {f.label}
-            </td>
-            <td className="py-4 px-2">{getCellValue(f.basic)}</td>
-            <td className="py-4 px-2">{getCellValue(f.advanced)}</td>
-            <td className="py-4 px-2">{getCellValue(f.premium)}</td>
+const PricingComparisonTable: React.FC<{ showModules?: boolean }> = ({ showModules = false }) => {
+  const items = showModules ? modulesFunctionalities : functionalities;
+
+  return (
+    <div className="overflow-x-auto rounded-2xl bg-white shadow-2xl border border-purple-100">
+      <table className="min-w-[800px] w-full rounded-2xl border-separate border-spacing-y-1">
+        <thead className="bg-soft-gray sticky top-0 z-10">
+          <tr>
+            <th className="py-4 px-4 text-left font-bold text-base rounded-tl-2xl text-purple-900 bg-transparent">
+              Funcionalidade
+            </th>
+            <th className="py-4 px-4 text-center font-bold text-base text-green-900 bg-transparent">
+              Básico
+            </th>
+            <th className="py-4 px-4 text-center font-bold text-base text-purple-900 bg-transparent">
+              Avançado
+            </th>
+            <th className="py-4 px-4 text-center font-bold text-base text-blue-900 rounded-tr-2xl bg-transparent">
+              Premium
+            </th>
           </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-);
+        </thead>
+        <tbody>
+          {items.map((f, idx) => (
+            <tr
+              key={f.label || idx}
+              className={`
+                ${f.isSection ? "bg-gray-100" : (idx % 2 === 0 ? "bg-white" : "bg-soft-gray/60")}
+                border-y border-purple-100 hover:bg-soft-purple/30 transition-colors group
+              `}
+            >
+              <td className={`px-4 py-4 ${f.isSection ? "font-bold text-purple-900" : "text-gray-800"} ${idx === 0 ? "rounded-l-xl" : ""}`}>
+                {f.label}
+              </td>
+              <td className="py-4 px-2">{!f.isSection && !f.isHeader && getCellValue(f.basic)}</td>
+              <td className="py-4 px-2">{!f.isSection && !f.isHeader && getCellValue(f.advanced)}</td>
+              <td className="py-4 px-2">{!f.isSection && !f.isHeader && getCellValue(f.premium)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
 export default PricingComparisonTable;

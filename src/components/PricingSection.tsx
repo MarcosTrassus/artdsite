@@ -85,6 +85,17 @@ const PricingSection: React.FC = () => {
         </div>
         
         <PricingComparisonTable />
+
+        <div className="max-w-5xl mx-auto mt-16">
+          <h3 className="text-3xl md:text-4xl font-bold text-center mb-8 font-montserrat tracking-tight">
+            Módulos Inclusos
+          </h3>
+          <PricingComparisonTable showModules={true} />
+          <p className="text-center text-gray-600 text-base mt-8 mx-auto max-w-xl">
+            Todos os planos incluem suporte via chat e abertura de chamados.<br />
+            Consulte as opções de créditos de desenvolvimento e condições especiais para sua empresa.
+          </p>
+        </div>
       </div>
     </section>
   );
