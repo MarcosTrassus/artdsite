@@ -89,9 +89,9 @@ const functionalities = [
     premium: (
       <span className="text-green-700">
         Pacotes<br />
-        15 créditos R$ 600,00<br />
-        30 créditos R$ 900,00<br />
-        50 créditos R$ 1.250,00
+        10 créditos R$ 900,00<br />
+        20 créditos R$ 1.500,00<br />
+        30 créditos R$ 1.950,00
       </span>
     ),
     highlight: true,
