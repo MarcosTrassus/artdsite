@@ -1,10 +1,9 @@
-
 import { Check, FileText, User, List, Calendar, Settings } from "lucide-react";
 
 const features = [
   {
     icon: List,
-    title: "Controle de Aluguéis de Roupas",  // Updated text here
+    title: "Controle de Aluguéis de Roupas",
     description: "Gerencie todos os contratos e ordens de aluguel em tempo real."
   },
   {
@@ -39,18 +38,9 @@ const FeaturesSection = () => (
     <h2 className="text-2xl md:text-3xl font-bold text-purple-700 text-center mb-10 font-montserrat">
       Funcionalidades Principais
     </h2>
-    <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-4 grid-cols-1">
-      {/* Coluna de imagem lateral apenas para telas médias/grandes */}
-      <div className="hidden md:flex col-span-1 items-start justify-center">
-        <img
-          src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=400&q=80"
-          alt="Ilustração Sistema Gestão"
-          className="rounded-xl shadow-lg max-w-[90%] mt-4"
-          draggable={false}
-        />
-      </div>
+    <div className="max-w-6xl mx-auto">
       {/* Cards de funcionalidades */}
-      <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {features.map((feature) => (
           <div
             key={feature.title}
