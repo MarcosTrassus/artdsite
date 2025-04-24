@@ -46,15 +46,15 @@ const ContactPage = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-4">
                 <Mail className="text-blue-600" />
-                <span>contato@trassusdigital.com.br</span>
+                <span>contato@trassus.com.br</span>
               </div>
               <div className="flex items-center space-x-4">
                 <Phone className="text-blue-600" />
-                <span>21 98569-4910</span>
+                <span>(11) 96611-8510</span>
               </div>
               <div className="flex items-center space-x-4">
                 <Contact className="text-blue-600" />
-                <span>Segunda a Sexta: 8:30 - 18h</span>
+                <span>Segunda a Sexta: 9h - 18h</span>
               </div>
             </div>
           </div>
