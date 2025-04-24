@@ -47,7 +47,7 @@ const functionalities = [
   },
   {
     label: "Atualizações Gratuitas",
-    basic: false,
+    basic: true,
     advanced: true,
     premium: true,
   },
