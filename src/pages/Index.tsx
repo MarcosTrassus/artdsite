@@ -5,7 +5,7 @@ import CTASection from "../components/CTASection";
 import FooterSection from "../components/FooterSection";
 import ScreenshotsSection from "../components/ScreenshotsSection";
 import SystemModulesSection from "../components/SystemModulesSection";
-import PricingTable from "../components/PricingTable";
+import PricingSection from "../components/PricingSection";
 import Header from "../components/Header";
 
 const Index = () => {
@@ -21,8 +21,11 @@ const Index = () => {
       <div id="modules">
         <SystemModulesSection />
       </div>
+      <div id="screenshots">
+        <ScreenshotsSection />
+      </div>
       <div id="pricing">
-        <PricingTable />
+        <PricingSection />
       </div>
       <div id="contact">
         <CTASection />
