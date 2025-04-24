@@ -26,7 +26,7 @@ const tableData = [
     items: [
       { name: "Aluguel", plans: [true, true, true] },
       { name: "Envio automático do Contrato via WhatsApp", plans: [false, true, true] },
-      { name: "Lembrete de Prova via WhatsApp", plans: [false, true, true] },
+      { name: "Lembrete de Prova via WhatsApp", plans: [true, true, true] },
       { name: "Lembrete de Retirada via WhatsApp", plans: [false, true, true] },
       { name: "Lembrete de Devolução via WhatsApp", plans: [false, true, true] },
       { name: "Mensageria WhatsApp", plans: [false, false, true] },
