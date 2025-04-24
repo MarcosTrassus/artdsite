@@ -101,6 +101,12 @@ const functionalities = [
     advanced: <span className="text-gray-700">R$ 75,00/máquina</span>,
     premium: <span className="text-gray-700">R$ 125,00/máquina</span>,
   },
+  {
+    label: "Envio automático do Contrato via WhatsApp",
+    basic: true,
+    advanced: true,
+    premium: true,
+  },
 ];
 
 const modulesFunctionalities = [
@@ -187,7 +193,7 @@ const modulesFunctionalities = [
   },
   {
     label: "Envio automático do Contrato via WhatsApp",
-    basic: false,
+    basic: true,
     advanced: true,
     premium: true
   },
