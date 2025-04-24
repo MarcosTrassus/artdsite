@@ -5,7 +5,7 @@ const HeroSection = () => {
   return (
     <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
       <img 
-        src="/lovable-uploads/f1f79a35-3b8a-405b-b9de-7c5dc393827c.png" 
+        src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=2070&q=80" 
         alt="Aluguel de Roupas" 
         className="w-full h-full object-cover object-center"
       />

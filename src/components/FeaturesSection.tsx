@@ -43,8 +43,8 @@ const FeaturesSection = () => (
       {/* Coluna de imagem lateral apenas para telas médias/grandes */}
       <div className="hidden md:flex col-span-1 items-start justify-center">
         <img
-          src="/lovable-uploads/ee3fbf54-d133-4624-a7d9-fb0a3c7ae617.png" 
-          alt="Sistema de Aluguel de Roupas"
+          src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&w=400&q=80"
+          alt="Ilustração Sistema Gestão"
           className="rounded-xl shadow-lg max-w-[90%] mt-4"
           draggable={false}
         />
@@ -69,4 +69,3 @@ const FeaturesSection = () => (
 );
 
 export default FeaturesSection;
-
