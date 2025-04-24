@@ -30,7 +30,9 @@ const Map: React.FC<MapProps> = ({ className }) => {
 
       mapboxgl.accessToken = mapboxToken;
       
-      const coordinates: [number, number] = [-43.3367, -22.8067]; // Coordinates for Rua Carolina Machado, 560
+      // Correct coordinates for Rua Carolina Machado, 560 - Madureira - RJ
+      // Updating from previous values to the correct ones
+      const coordinates: [number, number] = [-43.3367, -22.8743]; // Updated coordinates for the correct location
 
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
