@@ -5,8 +5,8 @@ const HeroSection = () => {
   return (
     <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
       <img 
-        src="https://monitor.aluguelderoupas.trassusdigital.com.br/Imagem/header_dashboard_site.png" 
-        alt="Dashboard Header" 
+        src="/lovable-uploads/f1f79a35-3b8a-405b-b9de-7c5dc393827c.png" 
+        alt="Aluguel de Roupas" 
         className="w-full h-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
