@@ -14,8 +14,8 @@ const Map: React.FC<MapProps> = ({ className }) => {
   const mapContainer = useRef<HTMLDivElement>(null);
   const map = useRef<mapboxgl.Map | null>(null);
   const marker = useRef<mapboxgl.Marker | null>(null);
-  const [mapboxToken, setMapboxToken] = useState<string>('');
-  const [showMap, setShowMap] = useState<boolean>(false);
+  const [mapboxToken, setMapboxToken] = useState<string>('pk.eyJ1IjoidHJhc3N1cyIsImEiOiJjbTl2c3ljZGwwZ3ZvMmpvZWhuZTdnaWx1In0.jTKHlcvRr58FJLgwGze0WQ');
+  const [showMap, setShowMap] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
 
   const initializeMap = () => {
@@ -59,8 +59,10 @@ const Map: React.FC<MapProps> = ({ className }) => {
     }
   };
 
-  // Cleanup function
+  // Initialize map on component mount
   useEffect(() => {
+    initializeMap();
+
     return () => {
       if (map.current) {
         map.current.remove();
@@ -70,35 +72,14 @@ const Map: React.FC<MapProps> = ({ className }) => {
 
   return (
     <div className={`relative h-[400px] rounded-lg overflow-hidden ${className}`}>
-      {!showMap && (
+      {error && (
         <div className="absolute inset-0 bg-gray-100 flex flex-col items-center justify-center p-4">
           <div className="mb-4 flex items-center">
             <AlertCircle className="text-amber-500 mr-2" />
             <p className="text-sm text-gray-600">
-              {error || 'Para visualizar o mapa, insira seu token público do Mapbox'}
+              {error}
             </p>
           </div>
-          
-          <div className="w-full max-w-md space-y-2">
-            <Input 
-              type="text" 
-              placeholder="Cole seu token do Mapbox aqui" 
-              value={mapboxToken} 
-              onChange={(e) => setMapboxToken(e.target.value)} 
-              className="w-full"
-            />
-            <Button 
-              onClick={initializeMap} 
-              disabled={!mapboxToken} 
-              className="w-full"
-            >
-              Carregar Mapa
-            </Button>
-          </div>
-          
-          <p className="mt-4 text-xs text-gray-500 max-w-md text-center">
-            Para obter um token do Mapbox, acesse <a href="https://mapbox.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">mapbox.com</a>, crie uma conta e encontre seu token público no painel.
-          </p>
         </div>
       )}
       
