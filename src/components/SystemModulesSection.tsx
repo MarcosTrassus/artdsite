@@ -278,7 +278,7 @@ const modules = [
           "A tela Pesquisa de Contratos permite consultar de forma detalhada todos os contratos cadastrados no sistema. Através de filtros como nome do cliente, CPF, atendente, tipo de evento, situação, período e datas específicas, o usuário pode localizar com precisão os registros desejados. É uma ferramenta fundamental para o controle operacional, acompanhamento de atendimentos e análise gerencial do fluxo de eventos.",
         imageAlt: "Tela de Pesquisa de Contratos",
         imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Compras.png",
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Pesquisa/Pesquisa_Contratos.png",
         icon: <FileText className="text-orange-600 mr-2" />,
       },
       {
