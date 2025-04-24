@@ -7,7 +7,7 @@ const FooterSection = () => (
     <div className="text-gray-500 text-sm mb-2 flex flex-row gap-4">
       <a href="mailto:contato@trassusdigital.com.br" className="hover:text-blue-600 transition">contato@trassusdigital.com.br</a>
       <span>|</span>
-      <a href="https://wa.me/5521985694910" target="_blank" rel="noopener noreferrer" className="hover:text-green-600 transition">
+      <a href="https://wa.me/5511966118510" target="_blank" rel="noopener noreferrer" className="hover:text-green-600 transition">
         WhatsApp
       </a>
     </div>

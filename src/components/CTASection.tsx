@@ -8,7 +8,7 @@ const CTASection = () => (
       Fale com a gente agora mesmo via WhatsApp ou solicite uma demonstração personalizada do sistema.
     </p>
     <a
-      href="https://wa.me/5521985694910"
+      href="https://wa.me/5511966118510"
       target="_blank"
       rel="noopener noreferrer"
       className="bg-green-500 hover:bg-green-600 text-white px-10 py-3 rounded-full text-lg font-semibold shadow transition"
