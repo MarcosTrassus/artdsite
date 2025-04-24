@@ -129,7 +129,7 @@ const modules = [
   },
   {
     key: "operacional",
-    label: "Operacional",
+    label: "Aluguel de Roupa",
     icon: <Shirt className="mr-2" />,
     features: [
       {
