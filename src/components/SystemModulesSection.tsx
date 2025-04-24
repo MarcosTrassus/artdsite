@@ -41,7 +41,7 @@ const modules = [
           "Essa aba reúne os dados cadastrais do cliente como nome, CPF, endereço, contato, além de detalhes como avaliação de crédito, observações, participação em programa de fidelidade, créditos disponíveis e anexos.",
         imageAlt: "Tela de Cadastro de Cliente",
         imageSrc:
-          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/cliente_dados.png",
+          "https://monitor.aluguelderoupas.trassusdigital.com.br/Manual/Imagens/Cadastro/Cadastro_Clientes_1.png",
         icon: <Users className="text-blue-600 mr-2" />,
       },
       {
