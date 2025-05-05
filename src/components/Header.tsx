@@ -1,10 +1,11 @@
 
 import { Home, GridIcon, LayoutList, Package, Mail, Contact } from "lucide-react";
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
 
   const scrollToSection = (id: string) => {
@@ -15,8 +16,15 @@ const Header = () => {
         element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // If we're on another page, navigate to the home page with the section as a hash
-      window.location.href = `/#${id}`;
+      // If we're on another page, navigate to home page and then scroll to section
+      navigate("/", { replace: true });
+      // We need to wait for the navigation to complete before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
     }
   };
 
