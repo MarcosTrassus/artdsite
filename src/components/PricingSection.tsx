@@ -6,7 +6,7 @@ const PricingSection: React.FC = () => {
   const plans = [
     {
       name: "BÁSICO",
-      price: "R$190,00",
+      price: "R$240,00",
       desc: "Essencial para começar",
       longDesc: "Ideal para pequenos negócios em início de estruturação",
       colorBg: "bg-green-50",
@@ -18,7 +18,7 @@ const PricingSection: React.FC = () => {
     },
     {
       name: "AVANÇADO",
-      price: "R$290,00",
+      price: "R$350,00",
       desc: "Mais vendido",
       longDesc: "Para empresas em crescimento que precisam de agilidade",
       colorBg: "bg-purple-50",
@@ -30,7 +30,7 @@ const PricingSection: React.FC = () => {
     },
     {
       name: "PREMIUM",
-      price: "R$490,00",
+      price: "R$570,00",
       desc: "Para empresas exigentes",
       longDesc: "Para empresas que não podem parar e precisam de performance máxima",
       colorBg: "bg-blue-50",

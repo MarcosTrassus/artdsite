@@ -10,7 +10,7 @@ const plans = [
     colorBg: "bg-[#F2FCE2]", // Soft Green pastel color
     shadow: "shadow-green-200/30",
     border: "border-green-500",
-    price: "R$190,00",
+    price: "R$240,00",
     highlight: false,
     badge: false,
     z: "z-0"
@@ -21,7 +21,7 @@ const plans = [
     colorBg: "bg-[#E5DEFF]", // Soft Purple pastel color
     shadow: "shadow-purple-300/40",
     border: "border-vivid-purple",
-    price: "R$290,00",
+    price: "R$350,00",
     highlight: true,
     badge: true,
     z: "z-20"
@@ -32,7 +32,7 @@ const plans = [
     colorBg: "bg-[#D3E4FD]", // Soft Blue pastel color
     shadow: "shadow-blue-200/30",
     border: "border-blue-500",
-    price: "R$490,00",
+    price: "R$570,00",
     highlight: false,
     badge: false,
     z: "z-10"
